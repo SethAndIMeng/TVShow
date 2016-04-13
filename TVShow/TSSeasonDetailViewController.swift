@@ -55,6 +55,11 @@ class TSSeasonDetailViewController: UIViewController {
         }
         
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("\(object_getClass(self)).viewWillAppear(\(animated))")
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

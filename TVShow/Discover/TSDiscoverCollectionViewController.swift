@@ -22,7 +22,7 @@ class TSDiscoverCollectionViewController: UICollectionViewController {
 
         // Register cell classes
 //        self.collectionView!.registerClass(TSDiscoverCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        self.collectionView!.registerNib(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView!.registerNib(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         
         // Do any additional setup after loading the view.
         
@@ -33,7 +33,7 @@ class TSDiscoverCollectionViewController: UICollectionViewController {
                 print("JSON: \(JSON)")
                 let array:Array<NSDictionary> = (JSON.objectForKey("data")?.objectForKey("results"))! as! Array<NSDictionary>
                 
-                for var dic in array {
+                for dic in array {
                     let season = TSSeasonResponseObject.yy_modelWithJSON(dic)
                     self.objects.append(season!)
                 }
@@ -42,21 +42,30 @@ class TSDiscoverCollectionViewController: UICollectionViewController {
         }
 
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("\(object_getClass(self)).viewWillAppear(\(animated))")
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        
+        if let indexPath = self.collectionView?.indexPathsForSelectedItems() {
+                            let object = self.objects[indexPath[0].item]
+                            let controller = segue.destinationViewController as! TSSeasonDetailViewController
+                            controller.seasonID = object.sid
+        }
     }
-    */
 
     // MARK: UICollectionViewDataSource
 

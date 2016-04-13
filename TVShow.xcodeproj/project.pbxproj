@@ -16,11 +16,7 @@
 		7F57FAD11CB4E66D0063BC02 /* TVShowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F57FAD01CB4E66D0063BC02 /* TVShowTests.swift */; };
 		7F57FADC1CB4E66D0063BC02 /* TVShowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F57FADB1CB4E66D0063BC02 /* TVShowUITests.swift */; };
 		7F9BC3B61CB755B600F2F9B5 /* TSDiscoverCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BC3B41CB755B600F2F9B5 /* TSDiscoverCollectionViewController.swift */; };
-		7F9BC3B71CB755B600F2F9B5 /* TSDiscoverCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BC3B51CB755B600F2F9B5 /* TSDiscoverCollectionViewLayout.swift */; };
 		7F9BC3BA1CB7560100F2F9B5 /* TSDiscoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BC3B81CB7560100F2F9B5 /* TSDiscoverCollectionViewCell.swift */; };
-		7F9BC3BE1CB7592D00F2F9B5 /* TSDiscoverCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BC3BC1CB7592D00F2F9B5 /* TSDiscoverCollectionReusableView.swift */; };
-		7F9BC3BF1CB7592D00F2F9B5 /* TSDiscoverCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F9BC3BD1CB7592D00F2F9B5 /* TSDiscoverCollectionReusableView.xib */; };
-		7F9BC3C11CB77DAB00F2F9B5 /* TSDiscoverCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F9BC3C01CB77DAB00F2F9B5 /* TSDiscoverCollectionViewCell.xib */; };
 		7FE001D91CB52F8300886FE8 /* TSResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE001D81CB52F8300886FE8 /* TSResponseObject.swift */; };
 		7FE001DB1CB54E5F00886FE8 /* TSSeasonResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE001DA1CB54E5F00886FE8 /* TSSeasonResponseObject.swift */; };
 		7FE001DD1CB54F3A00886FE8 /* TSPageResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE001DC1CB54F3A00886FE8 /* TSPageResponseObject.swift */; };
@@ -62,11 +58,7 @@
 		7F57FADB1CB4E66D0063BC02 /* TVShowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowUITests.swift; sourceTree = "<group>"; };
 		7F57FADD1CB4E66D0063BC02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F9BC3B41CB755B600F2F9B5 /* TSDiscoverCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDiscoverCollectionViewController.swift; sourceTree = "<group>"; };
-		7F9BC3B51CB755B600F2F9B5 /* TSDiscoverCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDiscoverCollectionViewLayout.swift; sourceTree = "<group>"; };
 		7F9BC3B81CB7560100F2F9B5 /* TSDiscoverCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDiscoverCollectionViewCell.swift; sourceTree = "<group>"; };
-		7F9BC3BC1CB7592D00F2F9B5 /* TSDiscoverCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDiscoverCollectionReusableView.swift; sourceTree = "<group>"; };
-		7F9BC3BD1CB7592D00F2F9B5 /* TSDiscoverCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSDiscoverCollectionReusableView.xib; sourceTree = "<group>"; };
-		7F9BC3C01CB77DAB00F2F9B5 /* TSDiscoverCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSDiscoverCollectionViewCell.xib; sourceTree = "<group>"; };
 		7FE001D81CB52F8300886FE8 /* TSResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSResponseObject.swift; sourceTree = "<group>"; };
 		7FE001DA1CB54E5F00886FE8 /* TSSeasonResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSeasonResponseObject.swift; sourceTree = "<group>"; };
 		7FE001DC1CB54F3A00886FE8 /* TSPageResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPageResponseObject.swift; sourceTree = "<group>"; };
@@ -185,11 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				7F9BC3B41CB755B600F2F9B5 /* TSDiscoverCollectionViewController.swift */,
-				7F9BC3B51CB755B600F2F9B5 /* TSDiscoverCollectionViewLayout.swift */,
-				7F9BC3BD1CB7592D00F2F9B5 /* TSDiscoverCollectionReusableView.xib */,
-				7F9BC3BC1CB7592D00F2F9B5 /* TSDiscoverCollectionReusableView.swift */,
 				7F9BC3B81CB7560100F2F9B5 /* TSDiscoverCollectionViewCell.swift */,
-				7F9BC3C01CB77DAB00F2F9B5 /* TSDiscoverCollectionViewCell.xib */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -335,8 +323,6 @@
 				7F57FAC61CB4E66D0063BC02 /* LaunchScreen.storyboard in Resources */,
 				7F57FAC31CB4E66D0063BC02 /* Assets.xcassets in Resources */,
 				7F57FAC11CB4E66D0063BC02 /* Main.storyboard in Resources */,
-				7F9BC3C11CB77DAB00F2F9B5 /* TSDiscoverCollectionViewCell.xib in Resources */,
-				7F9BC3BF1CB7592D00F2F9B5 /* TSDiscoverCollectionReusableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,10 +401,8 @@
 				7FE001DD1CB54F3A00886FE8 /* TSPageResponseObject.swift in Sources */,
 				7F57FABE1CB4E66D0063BC02 /* TSSeasonListViewController.swift in Sources */,
 				7FE001E41CB634D400886FE8 /* TSNetRequestManager.swift in Sources */,
-				7F9BC3B71CB755B600F2F9B5 /* TSDiscoverCollectionViewLayout.swift in Sources */,
 				7F9BC3BA1CB7560100F2F9B5 /* TSDiscoverCollectionViewCell.swift in Sources */,
 				7F57FABC1CB4E66D0063BC02 /* AppDelegate.swift in Sources */,
-				7F9BC3BE1CB7592D00F2F9B5 /* TSDiscoverCollectionReusableView.swift in Sources */,
 				7FE001E81CB646AF00886FE8 /* TSSeasonDetailResponseObject.swift in Sources */,
 				7FE001DF1CB633D800886FE8 /* TSSeasonDetailViewController.swift in Sources */,
 			);
