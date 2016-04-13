@@ -31,7 +31,7 @@
             <objects>
                 <collectionViewController id="gZ3-nx-WU2" customClass="TSDiscoverCollectionViewController" customModule="TVShow" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="7R7-dg-TAX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OKG-At-Am4">
@@ -94,7 +94,6 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="FxW-Yk-QN5"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7u-aV-b6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -157,14 +156,14 @@
                         <viewControllerLayoutGuide type="bottom" id="jpZ-W9-G7L"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Gtz-ef-DdW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sMr-ea-jP9">
-                                <rect key="frame" x="0.0" y="20" width="320" height="504"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sMr-ea-jP9">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ib5-Es-Zwo">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="165"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2BS-TW-tho">
                                                 <rect key="frame" x="8" y="18" width="99" height="129"/>
@@ -243,7 +242,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEA-YI-eh2">
-                                        <rect key="frame" x="0.0" y="165" width="320" height="339"/>
+                                        <rect key="frame" x="0.0" y="165" width="600" height="371"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -276,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xS5-1u-AWf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1732" y="-312"/>
+            <point key="canvasLocation" x="1854" y="52"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="v2g-R4-27s">
