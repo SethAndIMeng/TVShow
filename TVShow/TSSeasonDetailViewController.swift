@@ -34,7 +34,7 @@ class TSSeasonDetailViewController: UIViewController {
             if let JSON = response.result.value {
                 
                 print("JSON: \(JSON)")
-                let dic = JSON["data"] as? NSDictionary!
+                let dic = JSON["data"] as? NSDictionary
                 var seasonDetail: TSSeasonDetailResponseObject!
                 
                 if (dic != nil && dic!.objectForKey("seasonDetail") != nil){

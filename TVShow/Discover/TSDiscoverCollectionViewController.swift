@@ -11,11 +11,10 @@ import UIKit
 private let reuseIdentifier = "TSDiscoverCollectionViewCell"
 
 class TSDiscoverCollectionViewController: UICollectionViewController {
-    var objects:Array<TSSeasonResponseObject>!
+    var objects = Array<TSSeasonResponseObject>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        objects = Array()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -31,13 +30,13 @@ class TSDiscoverCollectionViewController: UICollectionViewController {
         TSNetRequestManager.sharedInstance.request(.GET, "http://api.rrmj.tv/v2/video/search", parameters: parameters).responseJSON { response in
             if let JSON = response.result.value {
                 print("JSON: \(JSON)")
-                let array:Array<NSDictionary> = (JSON.objectForKey("data")?.objectForKey("results"))! as! Array<NSDictionary>
-                
-                for dic in array {
-                    let season = TSSeasonResponseObject.yy_modelWithJSON(dic)
-                    self.objects.append(season!)
+                if let array = (JSON.objectForKey("data")?.objectForKey("results")) as? Array<NSDictionary> {
+                    for dic in array {
+                        let season = TSSeasonResponseObject.yy_modelWithJSON(dic) ?? TSSeasonResponseObject()
+                        self.objects.append(season)
+                    }
+                    self.collectionView?.reloadData()
                 }
-                self.collectionView!.reloadData()
             }
         }
 
@@ -62,8 +61,8 @@ class TSDiscoverCollectionViewController: UICollectionViewController {
         
         if let indexPath = self.collectionView?.indexPathsForSelectedItems() {
                             let object = self.objects[indexPath[0].item]
-                            let controller = segue.destinationViewController as! TSSeasonDetailViewController
-                            controller.seasonID = object.sid
+                            let controller = segue.destinationViewController as? TSSeasonDetailViewController
+                            controller?.seasonID = object.sid
         }
     }
 
@@ -81,16 +80,19 @@ class TSDiscoverCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! TSDiscoverCollectionViewCell
+        let reusedCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as? TSDiscoverCollectionViewCell
+        let cell = reusedCell ?? TSDiscoverCollectionViewCell()
     
         // Configure the cell
         let season = objects[indexPath.item]
         
         cell.titleLabel?.text = season.title
         cell.catalogLabel?.text = season.cat
-        cell.coverImageView?.kf_setImageWithURL(NSURL(string: season.cover)!, completionHandler: { (image, error, cacheType, imageURL) -> () in
-//            cell!.setNeedsLayout()
-        })
+        if let URL = NSURL(string: season.cover) {
+            cell.coverImageView?.kf_setImageWithURL(URL, completionHandler: { (image, error, cacheType, imageURL) -> () in
+                //            cell!.setNeedsLayout()
+            })
+        }
         
         return cell
     }

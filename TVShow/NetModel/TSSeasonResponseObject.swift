@@ -28,6 +28,7 @@
     }
 }
 */
+
 import Foundation
 
 class TSSeasonResponseObject: NSObject {

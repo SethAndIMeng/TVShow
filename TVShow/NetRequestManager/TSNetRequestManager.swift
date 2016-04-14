@@ -11,12 +11,7 @@ import Alamofire
 
 class TSNetRequestManager: NSObject {
     static let sharedInstance = TSNetRequestManager.alamofireManager
-    static let alamofireManager: Manager = {
-        let configuration = NSURLSessionConfiguration.ephemeralSessionConfiguration()
-        configuration.HTTPAdditionalHeaders = TSNetRequestManager.defaultHTTPHeaders
-        
-        return Manager(configuration: configuration)
-    }()
+    static let alamofireManager = Manager.sharedInstance;
     
     static let defaultHTTPHeaders: [String: String] = {
         
@@ -54,9 +49,9 @@ class TSNetRequestManager: NSObject {
             "Accept-Language": acceptLanguage,
             "User-Agent": userAgent
         ]
-        */
+         */
         return ["Accept-Encoding": acceptEncoding,
-//            "Accept-Language": acceptLanguage,
+                //            "Accept-Language": acceptLanguage,
             "User-Agent": "PUClient/2.1.0 (iPhone; iOS 9.3; Scale/3.00)",
             "clientVersion": "2.1.0","clientType": "ios",
             "Accept-Language": "zh-Hans-CN;q=1, en-CN;q=0.9, zh-Hans;q=0.8, en-US;q=0.7",
@@ -65,6 +60,4 @@ class TSNetRequestManager: NSObject {
             "c": "lhy",
             "e": "8e700690d7709575ff85b021f6fbbde9d816f75f"]
     }()
-    
-    
 }

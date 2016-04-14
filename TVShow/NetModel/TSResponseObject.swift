@@ -10,10 +10,10 @@
 //	TSResponseObject.swift
 //	Model file Generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
-import Foundation
+//import Foundation
 
-class TSResponseObject : NSObject{
-    var code : String!
-    var data : NSObject!
-    var msg : String!
-}
+//class TSResponseObject : NSObject{
+//    var code : String!
+//    var data : NSObject!
+//    var msg : String!
+//}

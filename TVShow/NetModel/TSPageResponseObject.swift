@@ -28,10 +28,12 @@
     }
 }
 */
-import Foundation
 
-class TSPageResponseObject: NSObject {
-    var currentPage : Int!
-    var results : AnyObject!
-    var total : Int!
-}
+
+//import Foundation
+//
+//class TSPageResponseObject: NSObject {
+//    var currentPage : Int!
+//    var results : AnyObject!
+//    var total : Int!
+//}
