@@ -11,7 +11,7 @@ import UIKit
 private let reuseIdentifier = "TSDiscoverCollectionViewCell"
 
 class TSDiscoverCollectionViewController: UICollectionViewController {
-    var objects = Array<TSSeasonResponseObject>()
+    var objects = [TSSeasonResponseObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +20,8 @@ class TSDiscoverCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-//        self.collectionView!.registerClass(TSDiscoverCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-//        self.collectionView!.registerNib(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView?.registerClass(TSDiscoverCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView?.registerNib(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         
         // Do any additional setup after loading the view.
         
@@ -60,9 +60,9 @@ class TSDiscoverCollectionViewController: UICollectionViewController {
         // Pass the selected object to the new view controller.
         
         if let indexPath = self.collectionView?.indexPathsForSelectedItems() {
-                            let object = self.objects[indexPath[0].item]
-                            let controller = segue.destinationViewController as? TSSeasonDetailViewController
-                            controller?.seasonID = object.sid
+            let object = self.objects[indexPath[0].item]
+            let controller = segue.destinationViewController as? TSSeasonDetailViewController
+            controller?.seasonID = object.sid
         }
     }
 
@@ -90,7 +90,7 @@ class TSDiscoverCollectionViewController: UICollectionViewController {
         cell.catalogLabel?.text = season.cat
         if let URL = NSURL(string: season.cover) {
             cell.coverImageView?.kf_setImageWithURL(URL, completionHandler: { (image, error, cacheType, imageURL) -> () in
-                //            cell!.setNeedsLayout()
+                //            cell.setNeedsLayout()
             })
         }
         

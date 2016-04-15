@@ -13,7 +13,7 @@ import Kingfisher
 
 class TSSeasonListViewController: UITableViewController{
 
-    var dataSource = Array<TSSeasonResponseObject>()
+    var dataSource = [TSSeasonResponseObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

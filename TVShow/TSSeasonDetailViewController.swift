@@ -10,7 +10,7 @@ import UIKit
 
 class TSSeasonDetailViewController: UIViewController {
 
-    var seasonID: String!
+    var seasonID = ""
     
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -25,26 +25,24 @@ class TSSeasonDetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        
-        seasonID = (seasonID == nil ? "" : seasonID)
-        
         let parameters = ["seasonId":seasonID, "userId":""]
         
         TSNetRequestManager.sharedInstance.request(.GET, "http://api.rrmj.tv/v3/video/detail", parameters: parameters).responseJSON { response in
             if let JSON = response.result.value {
                 
                 print("JSON: \(JSON)")
-                let dic = JSON["data"] as? NSDictionary
-                var seasonDetail: TSSeasonDetailResponseObject!
-                
-                if (dic != nil && dic!.objectForKey("seasonDetail") != nil){
-                    seasonDetail = TSSeasonDetailResponseObject.yy_modelWithJSON(dic!.objectForKey("seasonDetail")!)!
-                }
-                if (seasonDetail == nil) {
+                guard let dic = JSON["data"] as? NSDictionary else {
                     return
                 }
-                
-                self.coverImageView.kf_setImageWithURL(NSURL(string: seasonDetail.cover)!)
+                guard let seasonDetailObject = dic.objectForKey("seasonDetail") else {
+                    return
+                }
+                guard let seasonDetail = TSSeasonDetailResponseObject.yy_modelWithJSON(seasonDetailObject) else {
+                    return
+                }
+                if let coverString = NSURL(string: seasonDetail.cover) {
+                    self.coverImageView.kf_setImageWithURL(coverString)
+                }
                 self.titleLabel.text = seasonDetail.title
                 self.enTitleLabel.text = seasonDetail.enTitle
                 self.catalogLabel.text = seasonDetail.cat
