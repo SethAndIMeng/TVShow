@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C0EFCF112EE16C475916C0E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBD8567F4FF23BE331376A0 /* Pods.framework */; };
+		165270FC1CC9365200382265 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165270FB1CC9365200382265 /* Search.storyboard */; };
+		165270FE1CC9366500382265 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165270FD1CC9366500382265 /* Discover.storyboard */; };
+		165271001CC936BB00382265 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165270FF1CC936BB00382265 /* Detail.storyboard */; };
+		165271071CC93BF500382265 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165271051CC93BF500382265 /* MainTabBarController.swift */; };
+		165B35FB1CC7E74F0001BA48 /* TSResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165B35FA1CC7E74F0001BA48 /* TSResults.swift */; };
 		7F57FABC1CB4E66D0063BC02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F57FABB1CB4E66D0063BC02 /* AppDelegate.swift */; };
 		7F57FABE1CB4E66D0063BC02 /* TSSeasonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F57FABD1CB4E66D0063BC02 /* TSSeasonListViewController.swift */; };
 		7F57FAC11CB4E66D0063BC02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F57FABF1CB4E66D0063BC02 /* Main.storyboard */; };
@@ -23,6 +27,7 @@
 		7FE001DF1CB633D800886FE8 /* TSSeasonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE001DE1CB633D800886FE8 /* TSSeasonDetailViewController.swift */; };
 		7FE001E41CB634D400886FE8 /* TSNetRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE001E31CB634D400886FE8 /* TSNetRequestManager.swift */; };
 		7FE001E81CB646AF00886FE8 /* TSSeasonDetailResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE001E71CB646AF00886FE8 /* TSSeasonDetailResponseObject.swift */; };
+		AC844C6AD63A744B785F09C1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBD8567F4FF23BE331376A0 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +48,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		764D50DA44939EDA7E9469FC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		165270FB1CC9365200382265 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		165270FD1CC9366500382265 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
+		165270FF1CC936BB00382265 /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		165271051CC93BF500382265 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		165B35FA1CC7E74F0001BA48 /* TSResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSResults.swift; sourceTree = "<group>"; };
+		16A52D3E1CC7ED7E008A2BCA /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Build/Products/Debug-iphonesimulator/Pods.framework"; sourceTree = "<group>"; };
 		7F57FAB81CB4E66D0063BC02 /* TVShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F57FABB1CB4E66D0063BC02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F57FABD1CB4E66D0063BC02 /* TSSeasonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSSeasonListViewController.swift; sourceTree = "<group>"; };
@@ -65,8 +75,10 @@
 		7FE001DE1CB633D800886FE8 /* TSSeasonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSeasonDetailViewController.swift; sourceTree = "<group>"; };
 		7FE001E31CB634D400886FE8 /* TSNetRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSNetRequestManager.swift; sourceTree = "<group>"; };
 		7FE001E71CB646AF00886FE8 /* TSSeasonDetailResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSeasonDetailResponseObject.swift; sourceTree = "<group>"; };
-		950FA5EB73E153BD3A433681 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8142867907DF8D64922574D7 /* Pods_TVShow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVShow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBD8567F4FF23BE331376A0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1ECAEE95CFB0CE7675E2B2F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F6FFC888DFE1828A16444EB5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C0EFCF112EE16C475916C0E /* Pods.framework in Frameworks */,
+				AC844C6AD63A744B785F09C1 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +110,9 @@
 		0848D3241B81B22032048B7D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				16A52D3E1CC7ED7E008A2BCA /* Pods.framework */,
 				CEBD8567F4FF23BE331376A0 /* Pods.framework */,
+				8142867907DF8D64922574D7 /* Pods_TVShow.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,8 +124,8 @@
 				7F57FACF1CB4E66D0063BC02 /* TVShowTests */,
 				7F57FADA1CB4E66D0063BC02 /* TVShowUITests */,
 				7F57FAB91CB4E66D0063BC02 /* Products */,
-				B233E0C2F9F5DFC205EE0BA3 /* Pods */,
 				0848D3241B81B22032048B7D /* Frameworks */,
+				F0CE635549F3F0440352D64D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +151,10 @@
 				7FE001DE1CB633D800886FE8 /* TSSeasonDetailViewController.swift */,
 				7F9BC3B31CB755B600F2F9B5 /* Discover */,
 				7F57FABF1CB4E66D0063BC02 /* Main.storyboard */,
+				165271051CC93BF500382265 /* MainTabBarController.swift */,
+				165270FB1CC9365200382265 /* Search.storyboard */,
+				165270FD1CC9366500382265 /* Discover.storyboard */,
+				165270FF1CC936BB00382265 /* Detail.storyboard */,
 				7F57FAC21CB4E66D0063BC02 /* Assets.xcassets */,
 				7F57FAC41CB4E66D0063BC02 /* LaunchScreen.storyboard */,
 				7F57FAC71CB4E66D0063BC02 /* Info.plist */,
@@ -165,6 +183,7 @@
 		7F57FAE91CB52F390063BC02 /* NetModel */ = {
 			isa = PBXGroup;
 			children = (
+				165B35FA1CC7E74F0001BA48 /* TSResults.swift */,
 				7FE001D81CB52F8300886FE8 /* TSResponseObject.swift */,
 				7FE001DC1CB54F3A00886FE8 /* TSPageResponseObject.swift */,
 				7FE001DA1CB54E5F00886FE8 /* TSSeasonResponseObject.swift */,
@@ -204,11 +223,11 @@
 			path = NetRequestManager;
 			sourceTree = "<group>";
 		};
-		B233E0C2F9F5DFC205EE0BA3 /* Pods */ = {
+		F0CE635549F3F0440352D64D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				764D50DA44939EDA7E9469FC /* Pods.debug.xcconfig */,
-				950FA5EB73E153BD3A433681 /* Pods.release.xcconfig */,
+				F6FFC888DFE1828A16444EB5 /* Pods.debug.xcconfig */,
+				D1ECAEE95CFB0CE7675E2B2F /* Pods.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -322,7 +341,10 @@
 			files = (
 				7F57FAC61CB4E66D0063BC02 /* LaunchScreen.storyboard in Resources */,
 				7F57FAC31CB4E66D0063BC02 /* Assets.xcassets in Resources */,
+				165270FE1CC9366500382265 /* Discover.storyboard in Resources */,
+				165270FC1CC9365200382265 /* Search.storyboard in Resources */,
 				7F57FAC11CB4E66D0063BC02 /* Main.storyboard in Resources */,
+				165271001CC936BB00382265 /* Detail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,8 +419,10 @@
 			files = (
 				7FE001DB1CB54E5F00886FE8 /* TSSeasonResponseObject.swift in Sources */,
 				7FE001D91CB52F8300886FE8 /* TSResponseObject.swift in Sources */,
+				165271071CC93BF500382265 /* MainTabBarController.swift in Sources */,
 				7F9BC3B61CB755B600F2F9B5 /* TSDiscoverCollectionViewController.swift in Sources */,
 				7FE001DD1CB54F3A00886FE8 /* TSPageResponseObject.swift in Sources */,
+				165B35FB1CC7E74F0001BA48 /* TSResults.swift in Sources */,
 				7F57FABE1CB4E66D0063BC02 /* TSSeasonListViewController.swift in Sources */,
 				7FE001E41CB634D400886FE8 /* TSNetRequestManager.swift in Sources */,
 				7F9BC3BA1CB7560100F2F9B5 /* TSDiscoverCollectionViewCell.swift in Sources */,
@@ -544,9 +568,13 @@
 		};
 		7F57FAE11CB4E66D0063BC02 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 764D50DA44939EDA7E9469FC /* Pods.debug.xcconfig */;
+			baseConfigurationReference = F6FFC888DFE1828A16444EB5 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Build/Products/Debug-iphonesimulator",
+				);
 				INFOPLIST_FILE = TVShow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.imengX.TVShow;
@@ -556,9 +584,13 @@
 		};
 		7F57FAE21CB4E66D0063BC02 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 950FA5EB73E153BD3A433681 /* Pods.release.xcconfig */;
+			baseConfigurationReference = D1ECAEE95CFB0CE7675E2B2F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Build/Products/Debug-iphonesimulator",
+				);
 				INFOPLIST_FILE = TVShow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.imengX.TVShow;

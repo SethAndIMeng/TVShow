@@ -8,7 +8,8 @@
 
 import UIKit
 import Alamofire
-import YYModel
+import AlamofireObjectMapper
+import SwiftyJSON
 import Kingfisher
 
 class TSSeasonListViewController: UITableViewController{
@@ -30,17 +31,37 @@ class TSSeasonListViewController: UITableViewController{
             //"obj!": 若obj为T?类型，则返回对象为T类型
             //"obj as? T": 将任意类型转换为T?类型，失败时返回nil
             //"obj as! T": 将任意类型转换为T类型，失败时异常
-            if let JSON = response.result.value as? NSDictionary as Dictionary? {
-                print("JSON: \(JSON)")
-                let results = JSON["data"]?["results"]
-                if let array = results as? Array<NSDictionary> {
-                    self.dataSource = self.dataSource + array.map({ dic in
-                        TSSeasonResponseObject.yy_modelWithJSON(dic) ?? TSSeasonResponseObject()
-                    })
-                    self.tableView.reloadData()
+
+            switch response.result {
+            case .Success:
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    if let results = json["data"]["results"].array {
+//                        let a = TSResults(results)
+                    }
+                    
+                    print("JSON: \(json)")
                 }
+            case .Failure(let error):
+                print(error)
             }
+            
+//            if let JSON = response.result.value as? NSDictionary as Dictionary? {
+//                print("JSON: \(JSON)")
+//                let results = JSON["data"]?["results"]
+//                if let array = results as? Array<NSDictionary> {
+//                    self.dataSource = self.dataSource + array.map({ dic in
+//                        TSSeasonResponseObject.yy_modelWithJSON(dic) ?? TSSeasonResponseObject()
+//                    })
+//                    self.tableView.reloadData()
+//                }
+//            }
         }
+        TSNetRequestManager.sharedInstance.request(.GET, "http://api.rrmj.tv/v2/video/search", parameters: parameters).responseObject { (response: Response<TSResults, NSError>) in
+            response
+        }
+        
+        
                 
     }
     

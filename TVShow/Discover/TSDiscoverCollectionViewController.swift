@@ -15,7 +15,7 @@ class TSDiscoverCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        collectionView!.backgroundColor = UIColor.lightGrayColor()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -25,20 +25,20 @@ class TSDiscoverCollectionViewController: UICollectionViewController {
         
         // Do any additional setup after loading the view.
         
-        let parameters = ["order": "desc","sort": "createTime","mark": "update","page": "1","rows": "100"]
+//        let parameters = ["order": "desc","sort": "createTime","mark": "update","page": "1","rows": "100"]
         
-        TSNetRequestManager.sharedInstance.request(.GET, "http://api.rrmj.tv/v2/video/search", parameters: parameters).responseJSON { response in
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
-                if let array = (JSON.objectForKey("data")?.objectForKey("results")) as? Array<NSDictionary> {
-                    for dic in array {
-                        let season = TSSeasonResponseObject.yy_modelWithJSON(dic) ?? TSSeasonResponseObject()
-                        self.objects.append(season)
-                    }
-                    self.collectionView?.reloadData()
-                }
-            }
-        }
+//        TSNetRequestManager.sharedInstance.request(.GET, "http://api.rrmj.tv/v2/video/search", parameters: parameters).responseJSON { response in
+//            if let JSON = response.result.value {
+//                print("JSON: \(JSON)")
+//                if let array = (JSON.objectForKey("data")?.objectForKey("results")) as? Array<NSDictionary> {
+//                    for dic in array {
+//                        let season = TSSeasonResponseObject.yy_modelWithJSON(dic) ?? TSSeasonResponseObject()
+//                        self.objects.append(season)
+//                    }
+//                    self.collectionView?.reloadData()
+//                }
+//            }
+//        }
 
     }
     
