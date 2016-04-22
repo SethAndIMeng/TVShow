@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ObjectMapper
+import AlamofireObjectMapper
 
 private let reuseIdentifier = "TSDiscoverCollectionViewCell"
 
@@ -25,20 +27,20 @@ class TSDiscoverCollectionViewController: UICollectionViewController {
         
         // Do any additional setup after loading the view.
         
-//        let parameters = ["order": "desc","sort": "createTime","mark": "update","page": "1","rows": "100"]
+        let parameters = ["order": "desc","sort": "createTime","mark": "update","page": "1","rows": "100"]
         
-//        TSNetRequestManager.sharedInstance.request(.GET, "http://api.rrmj.tv/v2/video/search", parameters: parameters).responseJSON { response in
-//            if let JSON = response.result.value {
-//                print("JSON: \(JSON)")
-//                if let array = (JSON.objectForKey("data")?.objectForKey("results")) as? Array<NSDictionary> {
-//                    for dic in array {
-//                        let season = TSSeasonResponseObject.yy_modelWithJSON(dic) ?? TSSeasonResponseObject()
-//                        self.objects.append(season)
-//                    }
-//                    self.collectionView?.reloadData()
-//                }
-//            }
-//        }
+        TSNetRequestManager.sharedInstance.request(.GET, "http://api.rrmj.tv/v2/video/search", parameters: parameters).responseJSON { response in
+            if let value = response.result.value {
+                if let results = value.objectForKey("data")?.objectForKey("results") as? Array<NSDictionary> {
+                    for seasonObject in results {
+                        if let season = Mapper<TSSeasonResponseObject>().map(seasonObject) {
+                            self.objects.append(season)
+                        }
+                    }
+                    self.collectionView?.reloadData()
+                }
+            }
+        }
 
     }
     
@@ -62,7 +64,9 @@ class TSDiscoverCollectionViewController: UICollectionViewController {
         if let indexPath = self.collectionView?.indexPathsForSelectedItems() {
             let object = self.objects[indexPath[0].item]
             let controller = segue.destinationViewController as? TSSeasonDetailViewController
-            controller?.seasonID = object.sid
+            if let sid = object.sid {
+                controller?.seasonID = sid
+            }
         }
     }
 
@@ -88,7 +92,7 @@ class TSDiscoverCollectionViewController: UICollectionViewController {
         
         cell.titleLabel?.text = season.title
         cell.catalogLabel?.text = season.cat
-        if let URL = NSURL(string: season.cover) {
+        if let cover = season.cover, URL = NSURL(string: cover) {
             cell.coverImageView?.kf_setImageWithURL(URL, completionHandler: { (image, error, cacheType, imageURL) -> () in
                 //            cell.setNeedsLayout()
             })

@@ -30,17 +30,38 @@
 */
 
 import Foundation
+import SwiftyJSON
+import ObjectMapper
 
-class TSSeasonResponseObject: NSObject {
-    var brief : String!
-    var cat : String!
-    var cover : String!
-    var enTitle : String!
-    var id : Int!
-    var mark : String!
-    var score : Float!
-    var seasonNo : Int!
-    var sid : String!
-    var title : String!
-    var upInfo : Int!
+class TSSeasonResponseObject: Mappable {
+    var brief : String?
+    var cat : String?
+    var cover : String?
+    var enTitle : String?
+    var id : Int?
+    var mark : String?
+    var score : Float?
+    var seasonNo : Int?
+    var sid : String?
+    var title : String?
+    var upInfo : Int?
+    
+    required init?(_ map: Map) {
+        
+    }
+    
+    // Mappable
+    func mapping(map: Map) {
+        brief    <- map["brief"]
+        cat    <- map["cat"]
+        cover    <- map["cover"]
+        enTitle    <- map["enTitle"]
+        id    <- map["id"]
+        mark    <- map["mark"]
+        score    <- map["score"]
+        seasonNo    <- map["seasonNo"]
+        sid    <- map["sid"]
+        title    <- map["title"]
+        upInfo    <- map["upInfo"]
+    }
 }

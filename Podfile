@@ -6,10 +6,9 @@ inhibit_all_warnings!
 
 #target 'TVShow' do
     pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
-    pod 'Alamofire', '~> 3.0'
     pod 'AlamofireObjectMapper', '~> 3.0'
-	pod 'Kingfisher', '~> 2.2'
-	pod 'DZNEmptyDataSet'
+    pod 'Kingfisher', '~> 2.2'
+    pod 'DZNEmptyDataSet'
 #end
 
 

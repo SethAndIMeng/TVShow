@@ -72,7 +72,9 @@ class TSSeasonListViewController: UITableViewController{
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let object = dataSource[indexPath.row]
                 if let controller = segue.destinationViewController as? TSSeasonDetailViewController {
-                    controller.seasonID = object.sid
+                    if let sid = object.sid {
+                        controller.seasonID = sid
+                    }
 //                    controller.detailItem = object
 //                    controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
 //                    controller.navigationItem.leftItemsSupplementBackButton = true
@@ -101,7 +103,7 @@ class TSSeasonListViewController: UITableViewController{
         
         cell.textLabel?.text = season.title
         cell.detailTextLabel?.text = season.brief
-        if let URL = NSURL(string: season.cover) {
+        if let cover = season.cover, URL = NSURL(string: cover) {
             //URL不允许optional
             cell.imageView?.kf_setImageWithURL(URL, completionHandler: { (image, error, cacheType, imageURL) -> () in
                 cell.setNeedsLayout()
