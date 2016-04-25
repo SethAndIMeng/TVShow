@@ -5,6 +5,13 @@
 //  Created by imeng on 16/4/6.
 //  Copyright © 2016年 imeng. All rights reserved.
 //
+//学习https://onevcat.com/2014/06/walk-in-swift/
+//总结:
+//"T?": 表示Optional<T>
+//"obj?": 若obj为T?类型，则obj?可以安全使用链式语法，而返回对象仍然为T?类型
+//"obj!": 若obj为T?类型，则返回对象为T类型
+//"obj as? T": 将任意类型转换为T?类型，失败时返回nil
+//"obj as! T": 将任意类型转换为T类型，失败时异常
 
 import UIKit
 import Alamofire
@@ -14,7 +21,7 @@ import Kingfisher
 
 class TSSeasonListViewController: UITableViewController{
 
-    var dataSource = [TSSeasonResponseObject]()
+    var objects = [TSSeasonResponseObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,55 +29,22 @@ class TSSeasonListViewController: UITableViewController{
         
         // Do any additional setup after loading the view, typically from a nib.
         let parameters = ["order": "desc","sort": "createTime","mark": "update","page": "1","rows": "100"]
-        
-        TSNetRequestManager.sharedInstance.request(.GET, "http://api.rrmj.tv/v2/video/search", parameters: parameters).responseJSON { response in
-            //学习https://onevcat.com/2014/06/walk-in-swift/
-            //总结:
-            //"T?": 表示Optional<T>
-            //"obj?": 若obj为T?类型，则obj?可以安全使用链式语法，而返回对象仍然为T?类型
-            //"obj!": 若obj为T?类型，则返回对象为T类型
-            //"obj as? T": 将任意类型转换为T?类型，失败时返回nil
-            //"obj as! T": 将任意类型转换为T类型，失败时异常
-
+        TSNetRequestManager.sharedInstance.request(.GET, api, parameters: parameters).responseArray(keyPath:"data.results") { (response: Response<[TSSeasonResponseObject], NSError>) in
             switch response.result {
-            case .Success:
-                if let value = response.result.value {
-                    let json = JSON(value)
-                    if let results = json["data"]["results"].array {
-//                        let a = TSResults(results)
-                    }
-                    
-                    print("JSON: \(json)")
-                }
-            case .Failure(let error):
-                print(error)
+            case .Success(let result):
+                self.objects += result
+                self.tableView?.reloadData()
+            case .Failure(let errorInfo):
+                print(errorInfo)
             }
-            
-//            if let JSON = response.result.value as? NSDictionary as Dictionary? {
-//                print("JSON: \(JSON)")
-//                let results = JSON["data"]?["results"]
-//                if let array = results as? Array<NSDictionary> {
-//                    self.dataSource = self.dataSource + array.map({ dic in
-//                        TSSeasonResponseObject.yy_modelWithJSON(dic) ?? TSSeasonResponseObject()
-//                    })
-//                    self.tableView.reloadData()
-//                }
-//            }
         }
-        TSNetRequestManager.sharedInstance.request(.GET, "http://api.rrmj.tv/v2/video/search", parameters: parameters).responseObject { (response: Response<TSResults, NSError>) in
-            response
-        }
-        
-        
-                
     }
-    
     // MARK: - Segues
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let object = dataSource[indexPath.row]
+                let object = objects[indexPath.row]
                 if let controller = segue.destinationViewController as? TSSeasonDetailViewController {
                     if let sid = object.sid {
                         controller.seasonID = sid
@@ -90,7 +64,7 @@ class TSSeasonListViewController: UITableViewController{
 
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+        return objects.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -99,7 +73,7 @@ class TSSeasonListViewController: UITableViewController{
 //        if (cell == nil) {
 //            cell = UITableViewCell.init(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
 //        }
-        let season = dataSource[indexPath.row]
+        let season = objects[indexPath.row]
         
         cell.textLabel?.text = season.title
         cell.detailTextLabel?.text = season.brief

@@ -11,7 +11,6 @@
 		165270FE1CC9366500382265 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165270FD1CC9366500382265 /* Discover.storyboard */; };
 		165271001CC936BB00382265 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165270FF1CC936BB00382265 /* Detail.storyboard */; };
 		165271071CC93BF500382265 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165271051CC93BF500382265 /* MainTabBarController.swift */; };
-		165B35FB1CC7E74F0001BA48 /* TSResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165B35FA1CC7E74F0001BA48 /* TSResults.swift */; };
 		7F57FABC1CB4E66D0063BC02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F57FABB1CB4E66D0063BC02 /* AppDelegate.swift */; };
 		7F57FABE1CB4E66D0063BC02 /* TSSeasonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F57FABD1CB4E66D0063BC02 /* TSSeasonListViewController.swift */; };
 		7F57FAC11CB4E66D0063BC02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F57FABF1CB4E66D0063BC02 /* Main.storyboard */; };
@@ -52,7 +51,6 @@
 		165270FD1CC9366500382265 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		165270FF1CC936BB00382265 /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		165271051CC93BF500382265 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		165B35FA1CC7E74F0001BA48 /* TSResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSResults.swift; sourceTree = "<group>"; };
 		16A52D3E1CC7ED7E008A2BCA /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Build/Products/Debug-iphonesimulator/Pods.framework"; sourceTree = "<group>"; };
 		7F57FAB81CB4E66D0063BC02 /* TVShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F57FABB1CB4E66D0063BC02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -183,7 +181,6 @@
 		7F57FAE91CB52F390063BC02 /* NetModel */ = {
 			isa = PBXGroup;
 			children = (
-				165B35FA1CC7E74F0001BA48 /* TSResults.swift */,
 				7FE001D81CB52F8300886FE8 /* TSResponseObject.swift */,
 				7FE001DC1CB54F3A00886FE8 /* TSPageResponseObject.swift */,
 				7FE001DA1CB54E5F00886FE8 /* TSSeasonResponseObject.swift */,
@@ -422,7 +419,6 @@
 				165271071CC93BF500382265 /* MainTabBarController.swift in Sources */,
 				7F9BC3B61CB755B600F2F9B5 /* TSDiscoverCollectionViewController.swift in Sources */,
 				7FE001DD1CB54F3A00886FE8 /* TSPageResponseObject.swift in Sources */,
-				165B35FB1CC7E74F0001BA48 /* TSResults.swift in Sources */,
 				7F57FABE1CB4E66D0063BC02 /* TSSeasonListViewController.swift in Sources */,
 				7FE001E41CB634D400886FE8 /* TSNetRequestManager.swift in Sources */,
 				7F9BC3BA1CB7560100F2F9B5 /* TSDiscoverCollectionViewCell.swift in Sources */,

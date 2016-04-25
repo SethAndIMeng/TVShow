@@ -8,6 +8,8 @@
 
 import UIKit
 
+let DiscoverCellreuseIdentifier = "TSDiscoverCollectionViewCell"
+
 class TSDiscoverCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var coverImageView: UIImageView!

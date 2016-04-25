@@ -9,39 +9,31 @@
 import UIKit
 import ObjectMapper
 import AlamofireObjectMapper
+import Alamofire
 
-private let reuseIdentifier = "TSDiscoverCollectionViewCell"
+let DiscoverListURL = "http://api.rrmj.tv/v2/video/search"
+
 
 class TSDiscoverCollectionViewController: UICollectionViewController {
     var objects = [TSSeasonResponseObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView!.backgroundColor = UIColor.lightGrayColor()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-//        self.collectionView?.registerClass(TSDiscoverCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-//        self.collectionView?.registerNib(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         
-        // Do any additional setup after loading the view.
+        collectionView!.backgroundColor = UIColor.lightGrayColor()
         
         let parameters = ["order": "desc","sort": "createTime","mark": "update","page": "1","rows": "100"]
         
-        TSNetRequestManager.sharedInstance.request(.GET, "http://api.rrmj.tv/v2/video/search", parameters: parameters).responseJSON { response in
-            if let value = response.result.value {
-                if let results = value.objectForKey("data")?.objectForKey("results") as? Array<NSDictionary> {
-                    for seasonObject in results {
-                        if let season = Mapper<TSSeasonResponseObject>().map(seasonObject) {
-                            self.objects.append(season)
-                        }
-                    }
-                    self.collectionView?.reloadData()
-                }
+        TSNetRequestManager.sharedInstance.request(.GET, DiscoverListURL, parameters: parameters).responseArray(keyPath:"data.results") { (response: Response<[TSSeasonResponseObject], NSError>) in
+            switch response.result {
+            case .Success(let result):
+                self.objects += result
+                self.collectionView?.reloadData()
+            case .Failure(let errorInfo):
+                print(errorInfo)
             }
         }
-
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -84,7 +76,7 @@ class TSDiscoverCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let reusedCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as? TSDiscoverCollectionViewCell
+        let reusedCell = collectionView.dequeueReusableCellWithReuseIdentifier(DiscoverCellreuseIdentifier, forIndexPath: indexPath) as? TSDiscoverCollectionViewCell
         let cell = reusedCell ?? TSDiscoverCollectionViewCell()
     
         // Configure the cell
