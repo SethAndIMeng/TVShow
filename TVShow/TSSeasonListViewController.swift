@@ -28,6 +28,7 @@ class TSSeasonListViewController: UITableViewController{
 //        self.automaticallyAdjustsScrollViewInsets = false
         
         // Do any additional setup after loading the view, typically from a nib.
+        let api = "http://api.rrmj.tv/v2/video/search"
         let parameters = ["order": "desc","sort": "createTime","mark": "update","page": "1","rows": "100"]
         TSNetRequestManager.sharedInstance.request(.GET, api, parameters: parameters).responseArray(keyPath:"data.results") { (response: Response<[TSSeasonResponseObject], NSError>) in
             switch response.result {
