@@ -72,7 +72,9 @@
                             <outlet property="delegate" destination="ims-gS-wgN" id="pYF-16-CD5"/>
                         </connections>
                     </collectionView>
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="V2y-dc-6MR"/>
                     <navigationItem key="navigationItem" id="VMP-g4-VYE"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xvz-ex-IMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

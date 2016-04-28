@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,12 +17,58 @@
                     <view key="view" contentMode="scaleToFill" id="Nsw-fC-Eyf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="9My-ve-hLC">
+                                <rect key="frame" x="0.0" y="20" width="600" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="otZ-rt-WxA"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnW-Vl-VY5" userLabel="Hot Search">
+                                <rect key="frame" x="0.0" y="60" width="600" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="oLT-mj-FaQ"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Search View" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9TF-7O-NEN">
+                                <rect key="frame" x="380" y="571" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="UCd-On-37d"/>
+                                    <constraint firstAttribute="width" constant="200" id="vVE-nV-BZZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7c-Av-NzJ" userLabel="Recent Search">
+                                <rect key="frame" x="0.0" y="180" width="600" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="HC7-SG-GRx"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="p7c-Av-NzJ" firstAttribute="top" secondItem="qnW-Vl-VY5" secondAttribute="bottom" id="DVw-zc-4dX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9My-ve-hLC" secondAttribute="trailing" constant="-20" id="IQv-xg-Qbq"/>
+                            <constraint firstItem="p7c-Av-NzJ" firstAttribute="leading" secondItem="Nsw-fC-Eyf" secondAttribute="leadingMargin" constant="-20" id="Jhy-3r-Tol"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="p7c-Av-NzJ" secondAttribute="trailing" constant="-20" id="Nnv-qz-yht"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qnW-Vl-VY5" secondAttribute="trailing" constant="-20" id="Q1G-xM-tMt"/>
+                            <constraint firstItem="qnW-Vl-VY5" firstAttribute="top" secondItem="9My-ve-hLC" secondAttribute="bottom" id="RX9-CK-kPT"/>
+                            <constraint firstItem="9My-ve-hLC" firstAttribute="top" secondItem="qld-Jx-i2h" secondAttribute="bottom" id="Xb6-gi-6hE"/>
+                            <constraint firstItem="9My-ve-hLC" firstAttribute="leading" secondItem="Nsw-fC-Eyf" secondAttribute="leadingMargin" constant="-20" id="d47-UY-wNk"/>
+                            <constraint firstItem="9TF-7O-NEN" firstAttribute="trailing" secondItem="Nsw-fC-Eyf" secondAttribute="trailingMargin" id="doi-zN-DyQ"/>
+                            <constraint firstItem="qnW-Vl-VY5" firstAttribute="leading" secondItem="Nsw-fC-Eyf" secondAttribute="leadingMargin" constant="-20" id="l1Y-F6-hz5"/>
+                            <constraint firstItem="sMd-fk-pLd" firstAttribute="top" secondItem="9TF-7O-NEN" secondAttribute="bottom" constant="8" id="lbV-Rv-hhe"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="IhR-Fb-r9q"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ujp-E5-14N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="508" y="401"/>
+            <point key="canvasLocation" x="483" y="439"/>
         </scene>
     </scenes>
 </document>
