@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Discover Collection View Controller-->
+        <!--精选-->
         <scene sceneID="g1J-AU-NwY">
             <objects>
-                <collectionViewController id="ims-gS-wgN" customClass="TSDiscoverCollectionViewController" customModule="TVShow" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController title="精选" id="ims-gS-wgN" customClass="TSDiscoverCollectionViewController" customModule="TVShow" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6jL-tN-B8D">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,8 +72,7 @@
                             <outlet property="delegate" destination="ims-gS-wgN" id="pYF-16-CD5"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" systemItem="topRated" id="V2y-dc-6MR"/>
-                    <navigationItem key="navigationItem" id="VMP-g4-VYE"/>
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="V2y-dc-6MR"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xvz-ex-IMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
