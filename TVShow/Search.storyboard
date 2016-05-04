@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3uk-UI-w9w">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GBy-a5-UH0">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,160 +7,75 @@
     </dependencies>
     <scenes>
         <!--搜索-->
-        <scene sceneID="YkE-Oc-ZBk">
+        <scene sceneID="Wa8-aj-b3N">
             <objects>
-                <viewController title="搜索" id="3uk-UI-w9w" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qld-Jx-i2h"/>
-                        <viewControllerLayoutGuide type="bottom" id="sMd-fk-pLd"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Nsw-fC-Eyf">
+                <collectionViewController title="搜索" id="GBy-a5-UH0" customClass="MainSearchCollectionViewController" customModule="TVShow" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="prototypes" id="Cnm-h9-20S">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="9My-ve-hLC">
-                                <rect key="frame" x="0.0" y="20" width="600" height="40"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NXp-ca-z1W">
+                            <size key="itemSize" width="96" height="43"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="DPF-aG-Qh8" customClass="MainSearchCollectionViewCell" customModule="TVShow" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="96" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="96" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="测试关键字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5W-gK-IJe">
+                                            <rect key="frame" x="6" y="11" width="85" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="otZ-rt-WxA"/>
+                                    <constraint firstItem="x5W-gK-IJe" firstAttribute="centerY" secondItem="DPF-aG-Qh8" secondAttribute="centerY" id="m1d-C7-PLN"/>
+                                    <constraint firstItem="x5W-gK-IJe" firstAttribute="centerX" secondItem="DPF-aG-Qh8" secondAttribute="centerX" id="sos-3s-CvL"/>
                                 </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHQ-i8-Vto" userLabel="hotWordTitle">
-                                <rect key="frame" x="0.0" y="60" width="600" height="44"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热门搜索" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAu-53-ExV">
-                                        <rect key="frame" x="8" y="15" width="68" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="bAu-53-ExV" firstAttribute="leading" secondItem="mHQ-i8-Vto" secondAttribute="leading" constant="8" id="c3D-6p-Q5X"/>
-                                    <constraint firstAttribute="bottom" secondItem="bAu-53-ExV" secondAttribute="bottom" constant="8" id="fgh-QS-ITE"/>
-                                    <constraint firstAttribute="height" constant="44" id="uv2-T9-YfE"/>
-                                </constraints>
-                            </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2ep-Hc-5TX">
-                                <rect key="frame" x="0.0" y="104" width="600" height="220"/>
-                                <color key="backgroundColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="uBe-xU-DZL"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eXm-qu-csB">
-                                    <size key="itemSize" width="119" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="RVu-PK-EBN">
-                                        <rect key="frame" x="0.0" y="0.0" width="119" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="119" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关键词1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNf-YW-s7v">
-                                                    <rect key="frame" x="30" y="14" width="59" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="ZNf-YW-s7v" firstAttribute="centerY" secondItem="RVu-PK-EBN" secondAttribute="centerY" id="IpU-nL-rPW"/>
-                                            <constraint firstItem="ZNf-YW-s7v" firstAttribute="centerX" secondItem="RVu-PK-EBN" secondAttribute="centerX" id="aoQ-Rd-S34"/>
-                                        </constraints>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdc-gd-394" userLabel="hotWordTitle">
-                                <rect key="frame" x="0.0" y="324" width="600" height="44"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最近搜索" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9g-u8-iwd">
-                                        <rect key="frame" x="8" y="15" width="68" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="g9g-u8-iwd" firstAttribute="leading" secondItem="zdc-gd-394" secondAttribute="leading" constant="8" id="7rh-Fd-62a"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="MfM-Sb-j2p"/>
-                                    <constraint firstAttribute="bottom" secondItem="g9g-u8-iwd" secondAttribute="bottom" constant="8" id="Qg3-C2-f8g"/>
-                                    <constraint firstAttribute="height" constant="44" id="sgd-TQ-tAD"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="MfM-Sb-j2p"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G7b-Xd-ELp">
-                                <rect key="frame" x="0.0" y="368" width="600" height="183"/>
-                                <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dgw-IL-ldP">
-                                    <size key="itemSize" width="119" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="T0K-v3-W1i">
-                                        <rect key="frame" x="0.0" y="0.0" width="119" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="119" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关键词1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d36-Ky-03L">
-                                                    <rect key="frame" x="30" y="14" width="59" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="d36-Ky-03L" firstAttribute="centerX" secondItem="T0K-v3-W1i" secondAttribute="centerX" id="0MM-Oe-YFo"/>
-                                            <constraint firstItem="d36-Ky-03L" firstAttribute="centerY" secondItem="T0K-v3-W1i" secondAttribute="centerY" id="AgL-jo-uNg"/>
-                                        </constraints>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="2ep-Hc-5TX" firstAttribute="top" secondItem="mHQ-i8-Vto" secondAttribute="bottom" id="8C1-8B-JSw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mHQ-i8-Vto" secondAttribute="trailing" constant="-20" id="FFe-st-KbZ"/>
-                            <constraint firstItem="2ep-Hc-5TX" firstAttribute="leading" secondItem="Nsw-fC-Eyf" secondAttribute="leadingMargin" constant="-20" id="HuU-qc-3UO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9My-ve-hLC" secondAttribute="trailing" constant="-20" id="IQv-xg-Qbq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2ep-Hc-5TX" secondAttribute="trailing" constant="-20" id="NWK-mW-seK"/>
-                            <constraint firstItem="G7b-Xd-ELp" firstAttribute="leading" secondItem="Nsw-fC-Eyf" secondAttribute="leadingMargin" constant="-20" id="PsF-wk-eTv"/>
-                            <constraint firstItem="mHQ-i8-Vto" firstAttribute="leading" secondItem="Nsw-fC-Eyf" secondAttribute="leadingMargin" constant="-20" id="QOw-RD-8lX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="G7b-Xd-ELp" secondAttribute="trailing" constant="-20" id="QYw-Ny-xdS"/>
-                            <constraint firstItem="mHQ-i8-Vto" firstAttribute="top" secondItem="9My-ve-hLC" secondAttribute="bottom" id="VVO-Ph-Ieq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zdc-gd-394" secondAttribute="trailing" constant="-20" id="Vw7-Xh-cPd"/>
-                            <constraint firstItem="9My-ve-hLC" firstAttribute="top" secondItem="qld-Jx-i2h" secondAttribute="bottom" id="Xb6-gi-6hE"/>
-                            <constraint firstItem="zdc-gd-394" firstAttribute="leading" secondItem="Nsw-fC-Eyf" secondAttribute="leadingMargin" constant="-20" id="Zzv-hd-2tU"/>
-                            <constraint firstItem="9My-ve-hLC" firstAttribute="leading" secondItem="Nsw-fC-Eyf" secondAttribute="leadingMargin" constant="-20" id="d47-UY-wNk"/>
-                            <constraint firstItem="G7b-Xd-ELp" firstAttribute="top" secondItem="zdc-gd-394" secondAttribute="bottom" id="e57-1i-C1j"/>
-                            <constraint firstItem="sMd-fk-pLd" firstAttribute="top" secondItem="G7b-Xd-ELp" secondAttribute="bottom" id="h3D-UX-imv"/>
-                            <constraint firstItem="zdc-gd-394" firstAttribute="top" secondItem="2ep-Hc-5TX" secondAttribute="bottom" id="vFR-yU-v4O"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="IhR-Fb-r9q"/>
+                                <connections>
+                                    <outlet property="keywordLabel" destination="x5W-gK-IJe" id="OSj-7W-BHt"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="6us-r4-Emc" userLabel="Header">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关键字标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1I-GW-Mpw">
+                                    <rect key="frame" x="8" y="14" width="85" height="21"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="s1I-GW-Mpw" firstAttribute="leading" secondItem="6us-r4-Emc" secondAttribute="leadingMargin" id="4NV-tf-xcq"/>
+                                <constraint firstItem="s1I-GW-Mpw" firstAttribute="centerY" secondItem="6us-r4-Emc" secondAttribute="centerY" id="kLD-1I-ePA"/>
+                            </constraints>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="GBy-a5-UH0" id="JvA-ep-jxv"/>
+                            <outlet property="delegate" destination="GBy-a5-UH0" id="6Wq-Mb-4tL"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="iir-Y1-Pgx"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ujp-E5-14N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7b7-3I-fZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="483" y="439"/>
+            <point key="canvasLocation" x="297" y="415"/>
         </scene>
     </scenes>
 </document>
