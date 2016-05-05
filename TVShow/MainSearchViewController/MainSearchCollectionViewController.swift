@@ -7,43 +7,6 @@
 //
 
 import UIKit
-import CGRectExtensions
-
-class LeftAlignedFlowLayout: UICollectionViewFlowLayout {
-    override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        guard let oldAttributes = super.layoutAttributesForElementsInRect(rect) else {
-            return super.layoutAttributesForElementsInRect(rect)
-        }
-        let spacing = minimumInteritemSpacing // REPLACE WITH WHAT SPACING YOU NEED
-        var newAttributes = [UICollectionViewLayoutAttributes]()
-        var leftMargin = sectionInset.left
-        var previousAttributes = UICollectionViewLayoutAttributes()
-        for i in 0 ..< oldAttributes.count {
-            let attributes = oldAttributes[i]
-            
-            if i == 0 {
-                leftMargin = sectionInset.left
-            } else {
-                if (abs(attributes.frame.center.y - previousAttributes.frame.center.y) > 0.1) { //换行
-                    leftMargin = sectionInset.left
-                }
-                else { //不换行
-                    var newLeftAlignedFrame = attributes.frame
-                    newLeftAlignedFrame.origin.x = leftMargin
-                    attributes.frame = newLeftAlignedFrame
-                }
-            }
-            
-            attributes.frame.origin.x = leftMargin
-            newAttributes.append(attributes)
-            
-            leftMargin += attributes.frame.width + spacing
-            
-            previousAttributes = attributes
-        }
-        return newAttributes
-    }
-}
 
 class MainSearchCollectionViewController: UICollectionViewController {
 
