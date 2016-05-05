@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CGRectExtensions
 
 class LeftAlignedFlowLayout: UICollectionViewFlowLayout {
     override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
@@ -23,7 +24,7 @@ class LeftAlignedFlowLayout: UICollectionViewFlowLayout {
             if i == 0 {
                 leftMargin = sectionInset.left
             } else {
-                if (abs(attributes.frame.origin.y - previousAttributes.frame.origin.y) > 0.1) { //换行
+                if (abs(attributes.frame.center.y - previousAttributes.frame.center.y) > 0.1) { //换行
                     leftMargin = sectionInset.left
                 }
                 else { //不换行

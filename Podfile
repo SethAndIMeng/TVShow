@@ -9,6 +9,7 @@ inhibit_all_warnings!
     pod 'AlamofireObjectMapper', '~> 3.0'
     pod 'Kingfisher', '~> 2.2'
     pod 'DZNEmptyDataSet'
+    pod 'CGRectExtensions'
 #end
 
 
