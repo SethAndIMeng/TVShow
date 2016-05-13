@@ -117,7 +117,6 @@ public class IOStickyHeaderFlowLayout: UICollectionViewFlowLayout {
         currentAttribute.zIndex = 2000
       }
         y = y < 0 ? y : 0
-        print(y)
       currentAttribute.frame = CGRectMake(frame.origin.x, y, frame.size.width, height)
       allItems.append(currentAttribute)
     }

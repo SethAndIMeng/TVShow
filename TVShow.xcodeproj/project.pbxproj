@@ -12,7 +12,6 @@
 		16E06D6B1CE3889D0063BD19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E06D4C1CE3889D0063BD19 /* LaunchScreen.storyboard */; };
 		16E06D6D1CE3889D0063BD19 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E06D501CE3889D0063BD19 /* Detail.storyboard */; };
 		16E06D711CE3889D0063BD19 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E06D551CE3889D0063BD19 /* Discover.storyboard */; };
-		16E06D721CE3889D0063BD19 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16E06D561CE3889D0063BD19 /* Info.plist */; };
 		16E06D731CE3889D0063BD19 /* MainSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06D581CE3889D0063BD19 /* MainSearchCollectionViewCell.swift */; };
 		16E06D741CE3889D0063BD19 /* MainSearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06D591CE3889D0063BD19 /* MainSearchCollectionViewController.swift */; };
 		16E06D751CE3889D0063BD19 /* MainSearchHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06D5A1CE3889D0063BD19 /* MainSearchHeaderCollectionReusableView.swift */; };
@@ -331,7 +330,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = imeng;
 				TargetAttributes = {
 					7F57FAB71CB4E66D0063BC02 = {
@@ -374,7 +373,6 @@
 			files = (
 				16E06D9A1CE4D32A0063BD19 /* TSDiscoverBannerHeader.xib in Resources */,
 				16E06D6A1CE3889D0063BD19 /* Assets.xcassets in Resources */,
-				16E06D721CE3889D0063BD19 /* Info.plist in Resources */,
 				16E06D711CE3889D0063BD19 /* Discover.storyboard in Resources */,
 				16E06D7F1CE3889D0063BD19 /* Search.storyboard in Resources */,
 				16E06D6B1CE3889D0063BD19 /* LaunchScreen.storyboard in Resources */,
