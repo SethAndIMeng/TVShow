@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import AlamofireObjectMapper
 
-class TSDiscoverSectionCell: UICollectionViewCell{
-    @IBOutlet weak var titleLabel: UILabel!
+class TSDiscoverShelfCollectionViewCell: UICollectionViewCell{
+//    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
 }

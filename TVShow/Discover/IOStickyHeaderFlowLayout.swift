@@ -101,7 +101,7 @@ public class IOStickyHeaderFlowLayout: UICollectionViewFlowLayout {
       let maxY = CGRectGetMaxY(frame)
       
       var y = min(maxY - self.parallaxHeaderMinimumReferenceSize.height, (bounds?.origin.y)! + (self.collectionView?.contentInset.top)!)
-      let height = max(0, -y + maxY)
+      let height = max(0, maxY)
       
       
       let maxHeight = self.parallaxHeaderReferenceSize!.height

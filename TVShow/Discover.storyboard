@@ -1,42 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NBR-vx-PR7">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Discover View Controller-->
+        <!--探索-->
         <scene sceneID="xjP-pp-duu">
             <objects>
-                <collectionViewController id="NBR-vx-PR7" customClass="TSDiscoverViewController" customModule="TVShow" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController title="探索" id="NBR-vx-PR7" customClass="TSDiscoverViewController" customModule="TVShow" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="JbY-4x-EN6">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jSo-2x-y4Q" customClass="IOStickyHeaderFlowLayout" customModule="TVShow" customModuleProvider="target">
-                            <size key="itemSize" width="596.5" height="210"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="itemSize" width="596.5" height="191"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="erv-Ri-V2U" customClass="TSDiscoverSectionCell" customModule="TVShow" customModuleProvider="target">
-                                <rect key="frame" x="2" y="0.0" width="596.5" height="210"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="erv-Ri-V2U" customClass="TSDiscoverShelfCollectionViewCell" customModule="TVShow" customModuleProvider="target">
+                                <rect key="frame" x="2" y="50" width="596.5" height="191"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="596.5" height="210"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="596.5" height="191"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3y-BS-9Br">
-                                            <rect key="frame" x="10" y="10" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IfV-R8-TWl">
-                                            <rect key="frame" x="0.0" y="40" width="596.5" height="170"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="596.5" height="191"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="agq-4l-hsS">
                                                 <size key="itemSize" width="80" height="170"/>
@@ -46,26 +38,26 @@
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TSDiscoverCollectionViewCell" id="jWb-Xs-Pmq" customClass="TSDiscoverCollectionViewCell" customModule="TVShow" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="0.0" width="80" height="170"/>
+                                                    <rect key="frame" x="10" y="10.5" width="80" height="170"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="170"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hsV-X1-2Ox" userLabel="coverImage">
-                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="113"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="106.5"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="hsV-X1-2Ox" secondAttribute="height" multiplier="452:638" id="2me-Pu-P4B"/>
+                                                                    <constraint firstAttribute="width" secondItem="hsV-X1-2Ox" secondAttribute="height" multiplier="216:288" id="2me-Pu-P4B"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mc0-IE-fJa" userLabel="catalogLabel">
-                                                                <rect key="frame" x="0.0" y="141" width="80" height="13.5"/>
+                                                                <rect key="frame" x="0.0" y="150.5" width="80" height="13.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0v-Zk-ZPK" userLabel="titleLabel">
-                                                                <rect key="frame" x="0.0" y="118" width="80" height="16"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Labelaslfkdjklasjfdlksjf" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0v-Zk-ZPK" userLabel="titleLabel">
+                                                                <rect key="frame" x="0.0" y="111.5" width="80" height="31.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -76,11 +68,11 @@
                                                     <constraints>
                                                         <constraint firstItem="hsV-X1-2Ox" firstAttribute="top" secondItem="jWb-Xs-Pmq" secondAttribute="top" id="0yg-n0-3cc"/>
                                                         <constraint firstItem="m0v-Zk-ZPK" firstAttribute="leading" secondItem="jWb-Xs-Pmq" secondAttribute="leading" id="18z-Nn-Sb8"/>
-                                                        <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="Mc0-IE-fJa" secondAttribute="bottom" id="43W-HS-5cS"/>
                                                         <constraint firstAttribute="trailing" secondItem="hsV-X1-2Ox" secondAttribute="trailing" id="IU0-x9-dE7"/>
-                                                        <constraint firstItem="m0v-Zk-ZPK" firstAttribute="top" secondItem="hsV-X1-2Ox" secondAttribute="bottom" constant="5" id="WTJ-EK-KYl"/>
+                                                        <constraint firstItem="m0v-Zk-ZPK" firstAttribute="top" secondItem="hsV-X1-2Ox" secondAttribute="bottom" priority="800" constant="5" id="WTJ-EK-KYl"/>
                                                         <constraint firstItem="hsV-X1-2Ox" firstAttribute="leading" secondItem="jWb-Xs-Pmq" secondAttribute="leading" id="Wfp-8x-bPh"/>
-                                                        <constraint firstItem="Mc0-IE-fJa" firstAttribute="top" secondItem="m0v-Zk-ZPK" secondAttribute="bottom" constant="7" id="cbq-WR-BkK"/>
+                                                        <constraint firstItem="Mc0-IE-fJa" firstAttribute="top" secondItem="m0v-Zk-ZPK" secondAttribute="bottom" priority="750" constant="7" id="cbq-WR-BkK"/>
+                                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Mc0-IE-fJa" secondAttribute="bottom" priority="750" id="clt-Qn-kpO"/>
                                                         <constraint firstItem="Mc0-IE-fJa" firstAttribute="leading" secondItem="jWb-Xs-Pmq" secondAttribute="leading" id="hhY-Ze-PmV"/>
                                                         <constraint firstAttribute="trailing" secondItem="m0v-Zk-ZPK" secondAttribute="trailing" id="kCZ-r7-Yzw"/>
                                                         <constraint firstAttribute="trailing" secondItem="Mc0-IE-fJa" secondAttribute="trailing" id="tcY-pL-vNI"/>
@@ -98,27 +90,41 @@
                                 </view>
                                 <constraints>
                                     <constraint firstItem="IfV-R8-TWl" firstAttribute="leading" secondItem="erv-Ri-V2U" secondAttribute="leading" id="7XT-ee-NVA"/>
-                                    <constraint firstItem="IfV-R8-TWl" firstAttribute="top" secondItem="erv-Ri-V2U" secondAttribute="top" constant="40" id="Cs9-pt-M2z"/>
+                                    <constraint firstItem="IfV-R8-TWl" firstAttribute="top" secondItem="erv-Ri-V2U" secondAttribute="top" id="Cs9-pt-M2z"/>
                                     <constraint firstAttribute="trailing" secondItem="IfV-R8-TWl" secondAttribute="trailing" id="Vg9-1q-Rpu"/>
                                     <constraint firstAttribute="bottom" secondItem="IfV-R8-TWl" secondAttribute="bottom" id="bkd-1i-R2K"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="collectionView" destination="IfV-R8-TWl" id="egY-TZ-z0l"/>
-                                    <outlet property="titleLabel" destination="f3y-BS-9Br" id="t2j-fW-4OS"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sectionHeader" id="E7S-zj-0bs" customClass="TSDiscoverSectionHeader" customModule="TVShow" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhF-er-g3e">
+                                    <rect key="frame" x="10" y="14" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <connections>
+                                <outlet property="textLabel" destination="QhF-er-g3e" id="h5V-eY-dfG"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="NBR-vx-PR7" id="0B4-ul-o5L"/>
                             <outlet property="delegate" destination="NBR-vx-PR7" id="OgP-NM-YNG"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="GJ2-Xp-cmI"/>
+                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="GJ2-Xp-cmI"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g6n-O8-dY5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="948" y="-272.5"/>
+            <point key="canvasLocation" x="948" y="-273"/>
         </scene>
     </scenes>
 </document>

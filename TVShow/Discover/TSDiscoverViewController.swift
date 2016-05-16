@@ -36,21 +36,20 @@ class TSDiscoverViewController: UICollectionViewController {
             layout.itemSize = CGSizeMake(UIScreen.mainScreen().bounds.size.width, layout.itemSize.height)
             layout.parallaxHeaderAlwaysOnTop = true
             layout.disableStickyHeaders = true
-            self.collectionView?.collectionViewLayout = layout
         }
-        for _ in 1...10 {
+//        for _ in 1...10 {
             objects.append(TSDiscoverSectionModel())
-        }
+//        }
     }
     
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
+//    override func prefersStatusBarHidden() -> Bool {
+//        return true
+//    }
     
     // MARK: UICollectionViewDataSource
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
+        return 10
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -58,8 +57,7 @@ class TSDiscoverViewController: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as? TSDiscoverSectionCell {
-            cell.titleLabel.text = "\(indexPath.row)"
+        if let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as? TSDiscoverShelfCollectionViewCell {
             let model = objects[indexPath.row]
             model.collectionView = cell.collectionView
             cell.collectionView.dataSource = model
@@ -71,6 +69,13 @@ class TSDiscoverViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        if UICollectionElementKindSectionHeader == kind  {
+            if let sectionHeader = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "sectionHeader", forIndexPath: indexPath) as? TSDiscoverSectionHeader {
+                sectionHeader.textLabel.text = "\(indexPath.section + 1)"
+                return sectionHeader
+            }
+        }else
+        
         if let header = collectionView.dequeueReusableSupplementaryViewOfKind(IOStickyHeaderParallaxHeader, withReuseIdentifier: "header", forIndexPath: indexPath) as? TSDiscoverBannerHeader {
             return header
         }
