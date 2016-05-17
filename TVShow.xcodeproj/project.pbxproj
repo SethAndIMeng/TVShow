@@ -7,34 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16E06D691CE3889D0063BD19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06D4A1CE3889D0063BD19 /* AppDelegate.swift */; };
-		16E06D6A1CE3889D0063BD19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16E06D4B1CE3889D0063BD19 /* Assets.xcassets */; };
-		16E06D6B1CE3889D0063BD19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E06D4C1CE3889D0063BD19 /* LaunchScreen.storyboard */; };
-		16E06D6D1CE3889D0063BD19 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E06D501CE3889D0063BD19 /* Detail.storyboard */; };
-		16E06D711CE3889D0063BD19 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E06D551CE3889D0063BD19 /* Discover.storyboard */; };
-		16E06D731CE3889D0063BD19 /* MainSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06D581CE3889D0063BD19 /* MainSearchCollectionViewCell.swift */; };
-		16E06D741CE3889D0063BD19 /* MainSearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06D591CE3889D0063BD19 /* MainSearchCollectionViewController.swift */; };
-		16E06D751CE3889D0063BD19 /* MainSearchHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06D5A1CE3889D0063BD19 /* MainSearchHeaderCollectionReusableView.swift */; };
-		16E06D761CE3889D0063BD19 /* UICollectionViewLeftAlignedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06D5B1CE3889D0063BD19 /* UICollectionViewLeftAlignedFlowLayout.swift */; };
-		16E06D771CE3889D0063BD19 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06D5C1CE3889D0063BD19 /* MainTabBarController.swift */; };
-		16E06D791CE3889D0063BD19 /* TSPageResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06D5F1CE3889D0063BD19 /* TSPageResponseObject.swift */; };
-		16E06D7A1CE3889D0063BD19 /* TSResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06D601CE3889D0063BD19 /* TSResponseObject.swift */; };
-		16E06D7B1CE3889D0063BD19 /* TSSeasonDetailResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06D611CE3889D0063BD19 /* TSSeasonDetailResponseObject.swift */; };
-		16E06D7C1CE3889D0063BD19 /* TSSeasonResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06D621CE3889D0063BD19 /* TSSeasonResponseObject.swift */; };
-		16E06D7E1CE3889D0063BD19 /* TSNetRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06D651CE3889D0063BD19 /* TSNetRequestManager.swift */; };
-		16E06D7F1CE3889D0063BD19 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E06D661CE3889D0063BD19 /* Search.storyboard */; };
-		16E06D801CE3889D0063BD19 /* TSSeasonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06D671CE3889D0063BD19 /* TSSeasonDetailViewController.swift */; };
-		16E06D811CE3889D0063BD19 /* TSSeasonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06D681CE3889D0063BD19 /* TSSeasonListViewController.swift */; };
-		16E06D981CE4D32A0063BD19 /* TSDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06D901CE4D32A0063BD19 /* TSDiscoverViewController.swift */; };
-		16E06D991CE4D32A0063BD19 /* TSDiscoverBannerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06D921CE4D32A0063BD19 /* TSDiscoverBannerHeader.swift */; };
-		16E06D9A1CE4D32A0063BD19 /* TSDiscoverBannerHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16E06D931CE4D32A0063BD19 /* TSDiscoverBannerHeader.xib */; };
-		16E06D9B1CE4D32A0063BD19 /* TSDiscoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06D941CE4D32A0063BD19 /* TSDiscoverCollectionViewCell.swift */; };
-		16E06DA01CE4DE560063BD19 /* IOStickyHeaderFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06D9E1CE4DE560063BD19 /* IOStickyHeaderFlowLayout.swift */; };
-		16E06DA11CE4DE560063BD19 /* IOStickyHeaderFlowLayoutAttibutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06D9F1CE4DE560063BD19 /* IOStickyHeaderFlowLayoutAttibutes.swift */; };
-		16E06DA31CE4EC4F0063BD19 /* TSDiscoverSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06DA21CE4EC4F0063BD19 /* TSDiscoverSectionCell.swift */; };
-		16E06DA61CE4F0CA0063BD19 /* TSDiscoverSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E06DA51CE4F0CA0063BD19 /* TSDiscoverSectionModel.swift */; };
 		7F57FAD11CB4E66D0063BC02 /* TVShowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F57FAD01CB4E66D0063BC02 /* TVShowTests.swift */; };
 		7F57FADC1CB4E66D0063BC02 /* TVShowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F57FADB1CB4E66D0063BC02 /* TVShowUITests.swift */; };
+		7FC981B91CEAC60C009973F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981941CEAC60B009973F9 /* AppDelegate.swift */; };
+		7FC981BA1CEAC60C009973F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FC981951CEAC60B009973F9 /* Assets.xcassets */; };
+		7FC981BB1CEAC60C009973F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FC981961CEAC60B009973F9 /* LaunchScreen.storyboard */; };
+		7FC981BC1CEAC60C009973F9 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FC981981CEAC60B009973F9 /* Detail.storyboard */; };
+		7FC981BD1CEAC60C009973F9 /* IOStickyHeaderFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9819A1CEAC60B009973F9 /* IOStickyHeaderFlowLayout.swift */; };
+		7FC981BE1CEAC60C009973F9 /* IOStickyHeaderFlowLayoutAttibutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9819B1CEAC60B009973F9 /* IOStickyHeaderFlowLayoutAttibutes.swift */; };
+		7FC981BF1CEAC60C009973F9 /* TSDiscoverSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9819D1CEAC60B009973F9 /* TSDiscoverSectionModel.swift */; };
+		7FC981C01CEAC60C009973F9 /* TSDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9819E1CEAC60B009973F9 /* TSDiscoverViewController.swift */; };
+		7FC981C11CEAC60C009973F9 /* TSDiscoverBannerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981A01CEAC60B009973F9 /* TSDiscoverBannerHeader.swift */; };
+		7FC981C21CEAC60C009973F9 /* TSDiscoverBannerHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FC981A11CEAC60B009973F9 /* TSDiscoverBannerHeader.xib */; };
+		7FC981C31CEAC60C009973F9 /* TSDiscoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981A21CEAC60B009973F9 /* TSDiscoverCollectionViewCell.swift */; };
+		7FC981C41CEAC60C009973F9 /* TSDiscoverSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981A31CEAC60C009973F9 /* TSDiscoverSectionHeader.swift */; };
+		7FC981C51CEAC60C009973F9 /* TSDiscoverShelfCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981A41CEAC60C009973F9 /* TSDiscoverShelfCollectionViewCell.swift */; };
+		7FC981C61CEAC60C009973F9 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FC981A51CEAC60C009973F9 /* Discover.storyboard */; };
+		7FC981C71CEAC60C009973F9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FC981A61CEAC60C009973F9 /* Info.plist */; };
+		7FC981C81CEAC60C009973F9 /* MainSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981A81CEAC60C009973F9 /* MainSearchCollectionViewCell.swift */; };
+		7FC981C91CEAC60C009973F9 /* MainSearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981A91CEAC60C009973F9 /* MainSearchCollectionViewController.swift */; };
+		7FC981CA1CEAC60C009973F9 /* MainSearchHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981AA1CEAC60C009973F9 /* MainSearchHeaderCollectionReusableView.swift */; };
+		7FC981CB1CEAC60C009973F9 /* UICollectionViewLeftAlignedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981AB1CEAC60C009973F9 /* UICollectionViewLeftAlignedFlowLayout.swift */; };
+		7FC981CC1CEAC60C009973F9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981AC1CEAC60C009973F9 /* MainTabBarController.swift */; };
+		7FC981CE1CEAC60C009973F9 /* TSPageResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981AF1CEAC60C009973F9 /* TSPageResponseObject.swift */; };
+		7FC981CF1CEAC60C009973F9 /* TSResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981B01CEAC60C009973F9 /* TSResponseObject.swift */; };
+		7FC981D01CEAC60C009973F9 /* TSSeasonDetailResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981B11CEAC60C009973F9 /* TSSeasonDetailResponseObject.swift */; };
+		7FC981D11CEAC60C009973F9 /* TSSeasonResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981B21CEAC60C009973F9 /* TSSeasonResponseObject.swift */; };
+		7FC981D31CEAC60C009973F9 /* TSNetRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981B51CEAC60C009973F9 /* TSNetRequestManager.swift */; };
+		7FC981D41CEAC60C009973F9 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FC981B61CEAC60C009973F9 /* Search.storyboard */; };
+		7FC981D51CEAC60C009973F9 /* TSSeasonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981B71CEAC60C009973F9 /* TSSeasonDetailViewController.swift */; };
+		7FC981D61CEAC60C009973F9 /* TSSeasonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981B81CEAC60C009973F9 /* TSSeasonListViewController.swift */; };
 		AC844C6AD63A744B785F09C1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBD8567F4FF23BE331376A0 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,33 +59,6 @@
 
 /* Begin PBXFileReference section */
 		16A52D3E1CC7ED7E008A2BCA /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Build/Products/Debug-iphonesimulator/Pods.framework"; sourceTree = "<group>"; };
-		16E06D4A1CE3889D0063BD19 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		16E06D4B1CE3889D0063BD19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		16E06D4D1CE3889D0063BD19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		16E06D501CE3889D0063BD19 /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
-		16E06D551CE3889D0063BD19 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
-		16E06D561CE3889D0063BD19 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		16E06D581CE3889D0063BD19 /* MainSearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSearchCollectionViewCell.swift; sourceTree = "<group>"; };
-		16E06D591CE3889D0063BD19 /* MainSearchCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSearchCollectionViewController.swift; sourceTree = "<group>"; };
-		16E06D5A1CE3889D0063BD19 /* MainSearchHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSearchHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
-		16E06D5B1CE3889D0063BD19 /* UICollectionViewLeftAlignedFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewLeftAlignedFlowLayout.swift; sourceTree = "<group>"; };
-		16E06D5C1CE3889D0063BD19 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		16E06D5F1CE3889D0063BD19 /* TSPageResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPageResponseObject.swift; sourceTree = "<group>"; };
-		16E06D601CE3889D0063BD19 /* TSResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSResponseObject.swift; sourceTree = "<group>"; };
-		16E06D611CE3889D0063BD19 /* TSSeasonDetailResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSeasonDetailResponseObject.swift; sourceTree = "<group>"; };
-		16E06D621CE3889D0063BD19 /* TSSeasonResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSeasonResponseObject.swift; sourceTree = "<group>"; };
-		16E06D651CE3889D0063BD19 /* TSNetRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSNetRequestManager.swift; sourceTree = "<group>"; };
-		16E06D661CE3889D0063BD19 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
-		16E06D671CE3889D0063BD19 /* TSSeasonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSeasonDetailViewController.swift; sourceTree = "<group>"; };
-		16E06D681CE3889D0063BD19 /* TSSeasonListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSeasonListViewController.swift; sourceTree = "<group>"; };
-		16E06D901CE4D32A0063BD19 /* TSDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDiscoverViewController.swift; sourceTree = "<group>"; };
-		16E06D921CE4D32A0063BD19 /* TSDiscoverBannerHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDiscoverBannerHeader.swift; sourceTree = "<group>"; };
-		16E06D931CE4D32A0063BD19 /* TSDiscoverBannerHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSDiscoverBannerHeader.xib; sourceTree = "<group>"; };
-		16E06D941CE4D32A0063BD19 /* TSDiscoverCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDiscoverCollectionViewCell.swift; sourceTree = "<group>"; };
-		16E06D9E1CE4DE560063BD19 /* IOStickyHeaderFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOStickyHeaderFlowLayout.swift; sourceTree = "<group>"; };
-		16E06D9F1CE4DE560063BD19 /* IOStickyHeaderFlowLayoutAttibutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOStickyHeaderFlowLayoutAttibutes.swift; sourceTree = "<group>"; };
-		16E06DA21CE4EC4F0063BD19 /* TSDiscoverSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDiscoverSectionCell.swift; sourceTree = "<group>"; };
-		16E06DA51CE4F0CA0063BD19 /* TSDiscoverSectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDiscoverSectionModel.swift; sourceTree = "<group>"; };
 		7F57FAB81CB4E66D0063BC02 /* TVShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F57FACC1CB4E66D0063BC02 /* TVShowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVShowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F57FAD01CB4E66D0063BC02 /* TVShowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowTests.swift; sourceTree = "<group>"; };
@@ -91,6 +66,34 @@
 		7F57FAD71CB4E66D0063BC02 /* TVShowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVShowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F57FADB1CB4E66D0063BC02 /* TVShowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowUITests.swift; sourceTree = "<group>"; };
 		7F57FADD1CB4E66D0063BC02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FC981941CEAC60B009973F9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7FC981951CEAC60B009973F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7FC981971CEAC60B009973F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7FC981981CEAC60B009973F9 /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		7FC9819A1CEAC60B009973F9 /* IOStickyHeaderFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOStickyHeaderFlowLayout.swift; sourceTree = "<group>"; };
+		7FC9819B1CEAC60B009973F9 /* IOStickyHeaderFlowLayoutAttibutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOStickyHeaderFlowLayoutAttibutes.swift; sourceTree = "<group>"; };
+		7FC9819D1CEAC60B009973F9 /* TSDiscoverSectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDiscoverSectionModel.swift; sourceTree = "<group>"; };
+		7FC9819E1CEAC60B009973F9 /* TSDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDiscoverViewController.swift; sourceTree = "<group>"; };
+		7FC981A01CEAC60B009973F9 /* TSDiscoverBannerHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDiscoverBannerHeader.swift; sourceTree = "<group>"; };
+		7FC981A11CEAC60B009973F9 /* TSDiscoverBannerHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSDiscoverBannerHeader.xib; sourceTree = "<group>"; };
+		7FC981A21CEAC60B009973F9 /* TSDiscoverCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDiscoverCollectionViewCell.swift; sourceTree = "<group>"; };
+		7FC981A31CEAC60C009973F9 /* TSDiscoverSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDiscoverSectionHeader.swift; sourceTree = "<group>"; };
+		7FC981A41CEAC60C009973F9 /* TSDiscoverShelfCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDiscoverShelfCollectionViewCell.swift; sourceTree = "<group>"; };
+		7FC981A51CEAC60C009973F9 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
+		7FC981A61CEAC60C009973F9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FC981A81CEAC60C009973F9 /* MainSearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		7FC981A91CEAC60C009973F9 /* MainSearchCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSearchCollectionViewController.swift; sourceTree = "<group>"; };
+		7FC981AA1CEAC60C009973F9 /* MainSearchHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSearchHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		7FC981AB1CEAC60C009973F9 /* UICollectionViewLeftAlignedFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewLeftAlignedFlowLayout.swift; sourceTree = "<group>"; };
+		7FC981AC1CEAC60C009973F9 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		7FC981AF1CEAC60C009973F9 /* TSPageResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPageResponseObject.swift; sourceTree = "<group>"; };
+		7FC981B01CEAC60C009973F9 /* TSResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSResponseObject.swift; sourceTree = "<group>"; };
+		7FC981B11CEAC60C009973F9 /* TSSeasonDetailResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSeasonDetailResponseObject.swift; sourceTree = "<group>"; };
+		7FC981B21CEAC60C009973F9 /* TSSeasonResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSeasonResponseObject.swift; sourceTree = "<group>"; };
+		7FC981B51CEAC60C009973F9 /* TSNetRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSNetRequestManager.swift; sourceTree = "<group>"; };
+		7FC981B61CEAC60C009973F9 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		7FC981B71CEAC60C009973F9 /* TSSeasonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSeasonDetailViewController.swift; sourceTree = "<group>"; };
+		7FC981B81CEAC60C009973F9 /* TSSeasonListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSeasonListViewController.swift; sourceTree = "<group>"; };
 		8142867907DF8D64922574D7 /* Pods_TVShow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVShow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBD8567F4FF23BE331376A0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1ECAEE95CFB0CE7675E2B2F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,92 +136,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		16E06D491CE3889D0063BD19 /* TVShow */ = {
-			isa = PBXGroup;
-			children = (
-				16E06D4A1CE3889D0063BD19 /* AppDelegate.swift */,
-				16E06D4B1CE3889D0063BD19 /* Assets.xcassets */,
-				16E06D4C1CE3889D0063BD19 /* LaunchScreen.storyboard */,
-				16E06D501CE3889D0063BD19 /* Detail.storyboard */,
-				16E06D551CE3889D0063BD19 /* Discover.storyboard */,
-				16E06D561CE3889D0063BD19 /* Info.plist */,
-				16E06D8C1CE4D32A0063BD19 /* Discover */,
-				16E06D571CE3889D0063BD19 /* MainSearchViewController */,
-				16E06D5C1CE3889D0063BD19 /* MainTabBarController.swift */,
-				16E06D5D1CE3889D0063BD19 /* NetModel */,
-				16E06D641CE3889D0063BD19 /* NetRequestManager */,
-				16E06D661CE3889D0063BD19 /* Search.storyboard */,
-				16E06D671CE3889D0063BD19 /* TSSeasonDetailViewController.swift */,
-				16E06D681CE3889D0063BD19 /* TSSeasonListViewController.swift */,
-			);
-			path = TVShow;
-			sourceTree = "<group>";
-		};
-		16E06D571CE3889D0063BD19 /* MainSearchViewController */ = {
-			isa = PBXGroup;
-			children = (
-				16E06D581CE3889D0063BD19 /* MainSearchCollectionViewCell.swift */,
-				16E06D591CE3889D0063BD19 /* MainSearchCollectionViewController.swift */,
-				16E06D5A1CE3889D0063BD19 /* MainSearchHeaderCollectionReusableView.swift */,
-				16E06D5B1CE3889D0063BD19 /* UICollectionViewLeftAlignedFlowLayout.swift */,
-			);
-			path = MainSearchViewController;
-			sourceTree = "<group>";
-		};
-		16E06D5D1CE3889D0063BD19 /* NetModel */ = {
-			isa = PBXGroup;
-			children = (
-				16E06D5F1CE3889D0063BD19 /* TSPageResponseObject.swift */,
-				16E06D601CE3889D0063BD19 /* TSResponseObject.swift */,
-				16E06D611CE3889D0063BD19 /* TSSeasonDetailResponseObject.swift */,
-				16E06D621CE3889D0063BD19 /* TSSeasonResponseObject.swift */,
-			);
-			path = NetModel;
-			sourceTree = "<group>";
-		};
-		16E06D641CE3889D0063BD19 /* NetRequestManager */ = {
-			isa = PBXGroup;
-			children = (
-				16E06D651CE3889D0063BD19 /* TSNetRequestManager.swift */,
-			);
-			path = NetRequestManager;
-			sourceTree = "<group>";
-		};
-		16E06D8C1CE4D32A0063BD19 /* Discover */ = {
-			isa = PBXGroup;
-			children = (
-				16E06DA41CE4F0AB0063BD19 /* Model */,
-				16E06D9E1CE4DE560063BD19 /* IOStickyHeaderFlowLayout.swift */,
-				16E06D9F1CE4DE560063BD19 /* IOStickyHeaderFlowLayoutAttibutes.swift */,
-				16E06D901CE4D32A0063BD19 /* TSDiscoverViewController.swift */,
-				16E06D911CE4D32A0063BD19 /* View */,
-			);
-			path = Discover;
-			sourceTree = "<group>";
-		};
-		16E06D911CE4D32A0063BD19 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				16E06D921CE4D32A0063BD19 /* TSDiscoverBannerHeader.swift */,
-				16E06D931CE4D32A0063BD19 /* TSDiscoverBannerHeader.xib */,
-				16E06D941CE4D32A0063BD19 /* TSDiscoverCollectionViewCell.swift */,
-				16E06DA21CE4EC4F0063BD19 /* TSDiscoverSectionCell.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		16E06DA41CE4F0AB0063BD19 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				16E06DA51CE4F0CA0063BD19 /* TSDiscoverSectionModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		7F57FAAF1CB4E66D0063BC02 = {
 			isa = PBXGroup;
 			children = (
-				16E06D491CE3889D0063BD19 /* TVShow */,
+				7FC981931CEAC60B009973F9 /* TVShow */,
 				7F57FACF1CB4E66D0063BC02 /* TVShowTests */,
 				7F57FADA1CB4E66D0063BC02 /* TVShowUITests */,
 				7F57FAB91CB4E66D0063BC02 /* Products */,
@@ -253,6 +174,89 @@
 				7F57FADD1CB4E66D0063BC02 /* Info.plist */,
 			);
 			path = TVShowUITests;
+			sourceTree = "<group>";
+		};
+		7FC981931CEAC60B009973F9 /* TVShow */ = {
+			isa = PBXGroup;
+			children = (
+				7FC981941CEAC60B009973F9 /* AppDelegate.swift */,
+				7FC981951CEAC60B009973F9 /* Assets.xcassets */,
+				7FC981961CEAC60B009973F9 /* LaunchScreen.storyboard */,
+				7FC981981CEAC60B009973F9 /* Detail.storyboard */,
+				7FC981991CEAC60B009973F9 /* Discover */,
+				7FC981A51CEAC60C009973F9 /* Discover.storyboard */,
+				7FC981A61CEAC60C009973F9 /* Info.plist */,
+				7FC981A71CEAC60C009973F9 /* MainSearchViewController */,
+				7FC981AC1CEAC60C009973F9 /* MainTabBarController.swift */,
+				7FC981AD1CEAC60C009973F9 /* NetModel */,
+				7FC981B41CEAC60C009973F9 /* NetRequestManager */,
+				7FC981B61CEAC60C009973F9 /* Search.storyboard */,
+				7FC981B71CEAC60C009973F9 /* TSSeasonDetailViewController.swift */,
+				7FC981B81CEAC60C009973F9 /* TSSeasonListViewController.swift */,
+			);
+			path = TVShow;
+			sourceTree = "<group>";
+		};
+		7FC981991CEAC60B009973F9 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				7FC9819A1CEAC60B009973F9 /* IOStickyHeaderFlowLayout.swift */,
+				7FC9819B1CEAC60B009973F9 /* IOStickyHeaderFlowLayoutAttibutes.swift */,
+				7FC9819C1CEAC60B009973F9 /* Model */,
+				7FC9819E1CEAC60B009973F9 /* TSDiscoverViewController.swift */,
+				7FC9819F1CEAC60B009973F9 /* View */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		7FC9819C1CEAC60B009973F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7FC9819D1CEAC60B009973F9 /* TSDiscoverSectionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7FC9819F1CEAC60B009973F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7FC981A01CEAC60B009973F9 /* TSDiscoverBannerHeader.swift */,
+				7FC981A11CEAC60B009973F9 /* TSDiscoverBannerHeader.xib */,
+				7FC981A21CEAC60B009973F9 /* TSDiscoverCollectionViewCell.swift */,
+				7FC981A31CEAC60C009973F9 /* TSDiscoverSectionHeader.swift */,
+				7FC981A41CEAC60C009973F9 /* TSDiscoverShelfCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7FC981A71CEAC60C009973F9 /* MainSearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7FC981A81CEAC60C009973F9 /* MainSearchCollectionViewCell.swift */,
+				7FC981A91CEAC60C009973F9 /* MainSearchCollectionViewController.swift */,
+				7FC981AA1CEAC60C009973F9 /* MainSearchHeaderCollectionReusableView.swift */,
+				7FC981AB1CEAC60C009973F9 /* UICollectionViewLeftAlignedFlowLayout.swift */,
+			);
+			path = MainSearchViewController;
+			sourceTree = "<group>";
+		};
+		7FC981AD1CEAC60C009973F9 /* NetModel */ = {
+			isa = PBXGroup;
+			children = (
+				7FC981AF1CEAC60C009973F9 /* TSPageResponseObject.swift */,
+				7FC981B01CEAC60C009973F9 /* TSResponseObject.swift */,
+				7FC981B11CEAC60C009973F9 /* TSSeasonDetailResponseObject.swift */,
+				7FC981B21CEAC60C009973F9 /* TSSeasonResponseObject.swift */,
+			);
+			path = NetModel;
+			sourceTree = "<group>";
+		};
+		7FC981B41CEAC60C009973F9 /* NetRequestManager */ = {
+			isa = PBXGroup;
+			children = (
+				7FC981B51CEAC60C009973F9 /* TSNetRequestManager.swift */,
+			);
+			path = NetRequestManager;
 			sourceTree = "<group>";
 		};
 		F0CE635549F3F0440352D64D /* Pods */ = {
@@ -371,12 +375,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16E06D9A1CE4D32A0063BD19 /* TSDiscoverBannerHeader.xib in Resources */,
-				16E06D6A1CE3889D0063BD19 /* Assets.xcassets in Resources */,
-				16E06D711CE3889D0063BD19 /* Discover.storyboard in Resources */,
-				16E06D7F1CE3889D0063BD19 /* Search.storyboard in Resources */,
-				16E06D6B1CE3889D0063BD19 /* LaunchScreen.storyboard in Resources */,
-				16E06D6D1CE3889D0063BD19 /* Detail.storyboard in Resources */,
+				7FC981C21CEAC60C009973F9 /* TSDiscoverBannerHeader.xib in Resources */,
+				7FC981BA1CEAC60C009973F9 /* Assets.xcassets in Resources */,
+				7FC981C71CEAC60C009973F9 /* Info.plist in Resources */,
+				7FC981C61CEAC60C009973F9 /* Discover.storyboard in Resources */,
+				7FC981D41CEAC60C009973F9 /* Search.storyboard in Resources */,
+				7FC981BB1CEAC60C009973F9 /* LaunchScreen.storyboard in Resources */,
+				7FC981BC1CEAC60C009973F9 /* Detail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,26 +454,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16E06D9B1CE4D32A0063BD19 /* TSDiscoverCollectionViewCell.swift in Sources */,
-				16E06DA61CE4F0CA0063BD19 /* TSDiscoverSectionModel.swift in Sources */,
-				16E06D801CE3889D0063BD19 /* TSSeasonDetailViewController.swift in Sources */,
-				16E06D761CE3889D0063BD19 /* UICollectionViewLeftAlignedFlowLayout.swift in Sources */,
-				16E06D751CE3889D0063BD19 /* MainSearchHeaderCollectionReusableView.swift in Sources */,
-				16E06D7C1CE3889D0063BD19 /* TSSeasonResponseObject.swift in Sources */,
-				16E06D771CE3889D0063BD19 /* MainTabBarController.swift in Sources */,
-				16E06D991CE4D32A0063BD19 /* TSDiscoverBannerHeader.swift in Sources */,
-				16E06D7E1CE3889D0063BD19 /* TSNetRequestManager.swift in Sources */,
-				16E06DA01CE4DE560063BD19 /* IOStickyHeaderFlowLayout.swift in Sources */,
-				16E06D731CE3889D0063BD19 /* MainSearchCollectionViewCell.swift in Sources */,
-				16E06DA11CE4DE560063BD19 /* IOStickyHeaderFlowLayoutAttibutes.swift in Sources */,
-				16E06D811CE3889D0063BD19 /* TSSeasonListViewController.swift in Sources */,
-				16E06D7B1CE3889D0063BD19 /* TSSeasonDetailResponseObject.swift in Sources */,
-				16E06D7A1CE3889D0063BD19 /* TSResponseObject.swift in Sources */,
-				16E06D691CE3889D0063BD19 /* AppDelegate.swift in Sources */,
-				16E06D981CE4D32A0063BD19 /* TSDiscoverViewController.swift in Sources */,
-				16E06DA31CE4EC4F0063BD19 /* TSDiscoverSectionCell.swift in Sources */,
-				16E06D791CE3889D0063BD19 /* TSPageResponseObject.swift in Sources */,
-				16E06D741CE3889D0063BD19 /* MainSearchCollectionViewController.swift in Sources */,
+				7FC981C11CEAC60C009973F9 /* TSDiscoverBannerHeader.swift in Sources */,
+				7FC981C01CEAC60C009973F9 /* TSDiscoverViewController.swift in Sources */,
+				7FC981BE1CEAC60C009973F9 /* IOStickyHeaderFlowLayoutAttibutes.swift in Sources */,
+				7FC981B91CEAC60C009973F9 /* AppDelegate.swift in Sources */,
+				7FC981C51CEAC60C009973F9 /* TSDiscoverShelfCollectionViewCell.swift in Sources */,
+				7FC981D51CEAC60C009973F9 /* TSSeasonDetailViewController.swift in Sources */,
+				7FC981D11CEAC60C009973F9 /* TSSeasonResponseObject.swift in Sources */,
+				7FC981D01CEAC60C009973F9 /* TSSeasonDetailResponseObject.swift in Sources */,
+				7FC981C91CEAC60C009973F9 /* MainSearchCollectionViewController.swift in Sources */,
+				7FC981CB1CEAC60C009973F9 /* UICollectionViewLeftAlignedFlowLayout.swift in Sources */,
+				7FC981C81CEAC60C009973F9 /* MainSearchCollectionViewCell.swift in Sources */,
+				7FC981D31CEAC60C009973F9 /* TSNetRequestManager.swift in Sources */,
+				7FC981C41CEAC60C009973F9 /* TSDiscoverSectionHeader.swift in Sources */,
+				7FC981CF1CEAC60C009973F9 /* TSResponseObject.swift in Sources */,
+				7FC981BD1CEAC60C009973F9 /* IOStickyHeaderFlowLayout.swift in Sources */,
+				7FC981CC1CEAC60C009973F9 /* MainTabBarController.swift in Sources */,
+				7FC981CA1CEAC60C009973F9 /* MainSearchHeaderCollectionReusableView.swift in Sources */,
+				7FC981C31CEAC60C009973F9 /* TSDiscoverCollectionViewCell.swift in Sources */,
+				7FC981BF1CEAC60C009973F9 /* TSDiscoverSectionModel.swift in Sources */,
+				7FC981CE1CEAC60C009973F9 /* TSPageResponseObject.swift in Sources */,
+				7FC981D61CEAC60C009973F9 /* TSSeasonListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,10 +510,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		16E06D4C1CE3889D0063BD19 /* LaunchScreen.storyboard */ = {
+		7FC981961CEAC60B009973F9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				16E06D4D1CE3889D0063BD19 /* Base */,
+				7FC981971CEAC60B009973F9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
