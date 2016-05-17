@@ -10,23 +10,22 @@ import UIKit
 
 import AlamofireObjectMapper
 import Alamofire
+import SwiftyJSON
 
 let DiscoverListURL = "http://api.rrmj.tv/v2/video/search"
 
 class TSDiscoverSectionModel: NSObject,UICollectionViewDataSource, UICollectionViewDelegate {
     var objects = [TSSeasonResponseObject]()
-    var collectionView: UICollectionView?
+    var collectionViewController: UICollectionViewController?
     
-    override init() {
+    init(json:JSON) {
         super.init()
-        let parameters = ["order": "desc","sort": "createTime","mark": "update","page": "1","rows": "100"]
-        TSNetRequestManager.sharedInstance.request(.GET, DiscoverListURL, parameters: parameters).responseArray(keyPath:"data.results") { (response: Response<[TSSeasonResponseObject], NSError>) in
-            switch response.result {
-            case .Success(let result):
-                self.objects += result
-                self.collectionView?.reloadData()
-            case .Failure(let errorInfo):
-                print(errorInfo)
+        if let array = json.array {
+            for item in array {
+                let obj = TSSeasonResponseObject(json: item)
+//                obj.sid = item["id"].string
+                obj.cat = "***"
+                objects.append(obj)
             }
         }
     }
@@ -75,8 +74,17 @@ class TSDiscoverSectionModel: NSObject,UICollectionViewDataSource, UICollectionV
                 //            cell.setNeedsLayout()
             })
         }
-        
         return cell
     }
-
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if let detailViewController = UIStoryboard(name: "Detail", bundle: NSBundle.mainBundle()).instantiateInitialViewController(){
+            if let detail = detailViewController as? TSSeasonDetailViewController {
+                if let seasonid = objects[indexPath.item].internalIdentifier {
+                    detail.seasonID = "\(seasonid)"
+                }
+                self.collectionViewController?.navigationController?.pushViewController(detail, animated: true)
+            }
+        }
+    }
 }

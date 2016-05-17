@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NBR-vx-PR7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F31a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NBR-vx-PR7">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
@@ -14,50 +15,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jSo-2x-y4Q" customClass="IOStickyHeaderFlowLayout" customModule="TVShow" customModuleProvider="target">
-                            <size key="itemSize" width="596.5" height="191"/>
-                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="itemSize" width="596.5" height="160"/>
+                            <size key="headerReferenceSize" width="50" height="30"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="erv-Ri-V2U" customClass="TSDiscoverShelfCollectionViewCell" customModule="TVShow" customModuleProvider="target">
-                                <rect key="frame" x="2" y="50" width="596.5" height="191"/>
+                                <rect key="frame" x="2" y="30" width="596.5" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="596.5" height="191"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="596.5" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IfV-R8-TWl">
-                                            <rect key="frame" x="0.0" y="0.0" width="596.5" height="191"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="596.5" height="160"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="agq-4l-hsS">
-                                                <size key="itemSize" width="80" height="170"/>
+                                                <size key="itemSize" width="80" height="160"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TSDiscoverCollectionViewCell" id="jWb-Xs-Pmq" customClass="TSDiscoverCollectionViewCell" customModule="TVShow" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="10.5" width="80" height="170"/>
+                                                    <rect key="frame" x="10" y="0.0" width="80" height="160"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="170"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="160"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hsV-X1-2Ox" userLabel="coverImage">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hsV-X1-2Ox" userLabel="coverImage">
                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="106.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="hsV-X1-2Ox" secondAttribute="height" multiplier="216:288" id="2me-Pu-P4B"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mc0-IE-fJa" userLabel="catalogLabel">
-                                                                <rect key="frame" x="0.0" y="150.5" width="80" height="13.5"/>
+                                                                <rect key="frame" x="0.0" y="146.5" width="80" height="13.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Labelaslfkdjklasjfdlksjf" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0v-Zk-ZPK" userLabel="titleLabel">
-                                                                <rect key="frame" x="0.0" y="111.5" width="80" height="31.5"/>
+                                                                <rect key="frame" x="0.0" y="111" width="80" height="31.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -71,7 +72,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="hsV-X1-2Ox" secondAttribute="trailing" id="IU0-x9-dE7"/>
                                                         <constraint firstItem="m0v-Zk-ZPK" firstAttribute="top" secondItem="hsV-X1-2Ox" secondAttribute="bottom" priority="800" constant="5" id="WTJ-EK-KYl"/>
                                                         <constraint firstItem="hsV-X1-2Ox" firstAttribute="leading" secondItem="jWb-Xs-Pmq" secondAttribute="leading" id="Wfp-8x-bPh"/>
-                                                        <constraint firstItem="Mc0-IE-fJa" firstAttribute="top" secondItem="m0v-Zk-ZPK" secondAttribute="bottom" priority="750" constant="7" id="cbq-WR-BkK"/>
+                                                        <constraint firstItem="Mc0-IE-fJa" firstAttribute="top" secondItem="m0v-Zk-ZPK" secondAttribute="bottom" priority="250" constant="7" id="cbq-WR-BkK"/>
                                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Mc0-IE-fJa" secondAttribute="bottom" priority="750" id="clt-Qn-kpO"/>
                                                         <constraint firstItem="Mc0-IE-fJa" firstAttribute="leading" secondItem="jWb-Xs-Pmq" secondAttribute="leading" id="hhY-Ze-PmV"/>
                                                         <constraint firstAttribute="trailing" secondItem="m0v-Zk-ZPK" secondAttribute="trailing" id="kCZ-r7-Yzw"/>
@@ -100,16 +101,20 @@
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sectionHeader" id="E7S-zj-0bs" customClass="TSDiscoverSectionHeader" customModule="TVShow" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhF-er-g3e">
-                                    <rect key="frame" x="10" y="14" width="42" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhF-er-g3e">
+                                    <rect key="frame" x="10" y="5.5" width="42" height="19.5"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="QhF-er-g3e" firstAttribute="centerY" secondItem="E7S-zj-0bs" secondAttribute="centerY" id="UCq-DB-Bb2"/>
+                                <constraint firstItem="QhF-er-g3e" firstAttribute="leading" secondItem="E7S-zj-0bs" secondAttribute="leading" constant="10" id="s22-Gb-Slc"/>
+                            </constraints>
                             <connections>
                                 <outlet property="textLabel" destination="QhF-er-g3e" id="h5V-eY-dfG"/>
                             </connections>

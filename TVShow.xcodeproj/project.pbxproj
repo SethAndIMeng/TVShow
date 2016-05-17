@@ -31,12 +31,16 @@
 		7FC981CC1CEAC60C009973F9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981AC1CEAC60C009973F9 /* MainTabBarController.swift */; };
 		7FC981CE1CEAC60C009973F9 /* TSPageResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981AF1CEAC60C009973F9 /* TSPageResponseObject.swift */; };
 		7FC981CF1CEAC60C009973F9 /* TSResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981B01CEAC60C009973F9 /* TSResponseObject.swift */; };
-		7FC981D01CEAC60C009973F9 /* TSSeasonDetailResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981B11CEAC60C009973F9 /* TSSeasonDetailResponseObject.swift */; };
 		7FC981D11CEAC60C009973F9 /* TSSeasonResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981B21CEAC60C009973F9 /* TSSeasonResponseObject.swift */; };
 		7FC981D31CEAC60C009973F9 /* TSNetRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981B51CEAC60C009973F9 /* TSNetRequestManager.swift */; };
 		7FC981D41CEAC60C009973F9 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FC981B61CEAC60C009973F9 /* Search.storyboard */; };
-		7FC981D51CEAC60C009973F9 /* TSSeasonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981B71CEAC60C009973F9 /* TSSeasonDetailViewController.swift */; };
 		7FC981D61CEAC60C009973F9 /* TSSeasonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981B81CEAC60C009973F9 /* TSSeasonListViewController.swift */; };
+		7FC981DE1CEB0118009973F9 /* TSEpisodeBrief.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981D91CEB0117009973F9 /* TSEpisodeBrief.swift */; };
+		7FC981DF1CEB0118009973F9 /* TSPlayUrlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981DA1CEB0117009973F9 /* TSPlayUrlList.swift */; };
+		7FC981E01CEB0118009973F9 /* TSRecommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981DB1CEB0117009973F9 /* TSRecommend.swift */; };
+		7FC981E11CEB0118009973F9 /* TSSeasonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981DC1CEB0117009973F9 /* TSSeasonDetail.swift */; };
+		7FC981E21CEB0118009973F9 /* TSSiteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981DD1CEB0117009973F9 /* TSSiteList.swift */; };
+		7FC981E41CEB0149009973F9 /* TSSeasonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC981E31CEB0149009973F9 /* TSSeasonDetailViewController.swift */; };
 		AC844C6AD63A744B785F09C1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBD8567F4FF23BE331376A0 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,12 +92,16 @@
 		7FC981AC1CEAC60C009973F9 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		7FC981AF1CEAC60C009973F9 /* TSPageResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPageResponseObject.swift; sourceTree = "<group>"; };
 		7FC981B01CEAC60C009973F9 /* TSResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSResponseObject.swift; sourceTree = "<group>"; };
-		7FC981B11CEAC60C009973F9 /* TSSeasonDetailResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSeasonDetailResponseObject.swift; sourceTree = "<group>"; };
 		7FC981B21CEAC60C009973F9 /* TSSeasonResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSeasonResponseObject.swift; sourceTree = "<group>"; };
 		7FC981B51CEAC60C009973F9 /* TSNetRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSNetRequestManager.swift; sourceTree = "<group>"; };
 		7FC981B61CEAC60C009973F9 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
-		7FC981B71CEAC60C009973F9 /* TSSeasonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSeasonDetailViewController.swift; sourceTree = "<group>"; };
 		7FC981B81CEAC60C009973F9 /* TSSeasonListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSeasonListViewController.swift; sourceTree = "<group>"; };
+		7FC981D91CEB0117009973F9 /* TSEpisodeBrief.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSEpisodeBrief.swift; sourceTree = "<group>"; };
+		7FC981DA1CEB0117009973F9 /* TSPlayUrlList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSPlayUrlList.swift; sourceTree = "<group>"; };
+		7FC981DB1CEB0117009973F9 /* TSRecommend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSRecommend.swift; sourceTree = "<group>"; };
+		7FC981DC1CEB0117009973F9 /* TSSeasonDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSeasonDetail.swift; sourceTree = "<group>"; };
+		7FC981DD1CEB0117009973F9 /* TSSiteList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSiteList.swift; sourceTree = "<group>"; };
+		7FC981E31CEB0149009973F9 /* TSSeasonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSeasonDetailViewController.swift; sourceTree = "<group>"; };
 		8142867907DF8D64922574D7 /* Pods_TVShow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVShow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBD8567F4FF23BE331376A0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1ECAEE95CFB0CE7675E2B2F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +191,7 @@
 				7FC981951CEAC60B009973F9 /* Assets.xcassets */,
 				7FC981961CEAC60B009973F9 /* LaunchScreen.storyboard */,
 				7FC981981CEAC60B009973F9 /* Detail.storyboard */,
+				7FC981D71CEAFF7F009973F9 /* Detail */,
 				7FC981991CEAC60B009973F9 /* Discover */,
 				7FC981A51CEAC60C009973F9 /* Discover.storyboard */,
 				7FC981A61CEAC60C009973F9 /* Info.plist */,
@@ -191,7 +200,6 @@
 				7FC981AD1CEAC60C009973F9 /* NetModel */,
 				7FC981B41CEAC60C009973F9 /* NetRequestManager */,
 				7FC981B61CEAC60C009973F9 /* Search.storyboard */,
-				7FC981B71CEAC60C009973F9 /* TSSeasonDetailViewController.swift */,
 				7FC981B81CEAC60C009973F9 /* TSSeasonListViewController.swift */,
 			);
 			path = TVShow;
@@ -245,7 +253,6 @@
 			children = (
 				7FC981AF1CEAC60C009973F9 /* TSPageResponseObject.swift */,
 				7FC981B01CEAC60C009973F9 /* TSResponseObject.swift */,
-				7FC981B11CEAC60C009973F9 /* TSSeasonDetailResponseObject.swift */,
 				7FC981B21CEAC60C009973F9 /* TSSeasonResponseObject.swift */,
 			);
 			path = NetModel;
@@ -257,6 +264,27 @@
 				7FC981B51CEAC60C009973F9 /* TSNetRequestManager.swift */,
 			);
 			path = NetRequestManager;
+			sourceTree = "<group>";
+		};
+		7FC981D71CEAFF7F009973F9 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				7FC981E31CEB0149009973F9 /* TSSeasonDetailViewController.swift */,
+				7FC981D81CEB0117009973F9 /* NetModel */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		7FC981D81CEB0117009973F9 /* NetModel */ = {
+			isa = PBXGroup;
+			children = (
+				7FC981D91CEB0117009973F9 /* TSEpisodeBrief.swift */,
+				7FC981DA1CEB0117009973F9 /* TSPlayUrlList.swift */,
+				7FC981DB1CEB0117009973F9 /* TSRecommend.swift */,
+				7FC981DC1CEB0117009973F9 /* TSSeasonDetail.swift */,
+				7FC981DD1CEB0117009973F9 /* TSSiteList.swift */,
+			);
+			path = NetModel;
 			sourceTree = "<group>";
 		};
 		F0CE635549F3F0440352D64D /* Pods */ = {
@@ -457,22 +485,26 @@
 				7FC981C11CEAC60C009973F9 /* TSDiscoverBannerHeader.swift in Sources */,
 				7FC981C01CEAC60C009973F9 /* TSDiscoverViewController.swift in Sources */,
 				7FC981BE1CEAC60C009973F9 /* IOStickyHeaderFlowLayoutAttibutes.swift in Sources */,
+				7FC981E21CEB0118009973F9 /* TSSiteList.swift in Sources */,
 				7FC981B91CEAC60C009973F9 /* AppDelegate.swift in Sources */,
+				7FC981DF1CEB0118009973F9 /* TSPlayUrlList.swift in Sources */,
 				7FC981C51CEAC60C009973F9 /* TSDiscoverShelfCollectionViewCell.swift in Sources */,
-				7FC981D51CEAC60C009973F9 /* TSSeasonDetailViewController.swift in Sources */,
 				7FC981D11CEAC60C009973F9 /* TSSeasonResponseObject.swift in Sources */,
-				7FC981D01CEAC60C009973F9 /* TSSeasonDetailResponseObject.swift in Sources */,
+				7FC981E11CEB0118009973F9 /* TSSeasonDetail.swift in Sources */,
 				7FC981C91CEAC60C009973F9 /* MainSearchCollectionViewController.swift in Sources */,
 				7FC981CB1CEAC60C009973F9 /* UICollectionViewLeftAlignedFlowLayout.swift in Sources */,
 				7FC981C81CEAC60C009973F9 /* MainSearchCollectionViewCell.swift in Sources */,
 				7FC981D31CEAC60C009973F9 /* TSNetRequestManager.swift in Sources */,
 				7FC981C41CEAC60C009973F9 /* TSDiscoverSectionHeader.swift in Sources */,
+				7FC981DE1CEB0118009973F9 /* TSEpisodeBrief.swift in Sources */,
 				7FC981CF1CEAC60C009973F9 /* TSResponseObject.swift in Sources */,
+				7FC981E41CEB0149009973F9 /* TSSeasonDetailViewController.swift in Sources */,
 				7FC981BD1CEAC60C009973F9 /* IOStickyHeaderFlowLayout.swift in Sources */,
 				7FC981CC1CEAC60C009973F9 /* MainTabBarController.swift in Sources */,
 				7FC981CA1CEAC60C009973F9 /* MainSearchHeaderCollectionReusableView.swift in Sources */,
 				7FC981C31CEAC60C009973F9 /* TSDiscoverCollectionViewCell.swift in Sources */,
 				7FC981BF1CEAC60C009973F9 /* TSDiscoverSectionModel.swift in Sources */,
+				7FC981E01CEB0118009973F9 /* TSRecommend.swift in Sources */,
 				7FC981CE1CEAC60C009973F9 /* TSPageResponseObject.swift in Sources */,
 				7FC981D61CEAC60C009973F9 /* TSSeasonListViewController.swift in Sources */,
 			);

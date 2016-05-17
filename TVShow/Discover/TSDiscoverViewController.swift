@@ -9,11 +9,26 @@
 import UIKit
 import AlamofireObjectMapper
 import Alamofire
+import SwiftyJSON
 
 private let reuseIdentifier = "Cell"
 
+let DiscoverSectionURL = "http://api.rrmj.tv/v2/video/indexInfo"
+
 class TSDiscoverViewController: UICollectionViewController {
-    var objects = [TSDiscoverSectionModel]()
+    var responseObjectData:JSON? {
+        didSet {
+            if let listArray = responseObjectData!["index"].array {
+                for responseSectionItem in listArray {
+                    let sectionModel = TSDiscoverSectionModel(json: responseSectionItem["seasonList"])
+                    contentObjects.append(sectionModel)
+                }
+                self.collectionView?.reloadData()
+            }
+        }
+    }
+    
+    var contentObjects = [TSDiscoverSectionModel]()
     // MARK: - Left Cycle
     
     override func didReceiveMemoryWarning() {
@@ -31,15 +46,23 @@ class TSDiscoverViewController: UICollectionViewController {
         let screenBounds = UIScreen.mainScreen().bounds
         // setup layout
         if let layout: IOStickyHeaderFlowLayout = self.collectionView?.collectionViewLayout as? IOStickyHeaderFlowLayout {
-            layout.parallaxHeaderReferenceSize = CGSizeMake(screenBounds.width, 0.56 * screenBounds.width)
+            layout.parallaxHeaderReferenceSize = CGSizeMake(screenBounds.width, 0.58 * screenBounds.width)
             layout.parallaxHeaderMinimumReferenceSize = CGSizeMake(screenBounds.width, 0)
             layout.itemSize = CGSizeMake(UIScreen.mainScreen().bounds.size.width, layout.itemSize.height)
             layout.parallaxHeaderAlwaysOnTop = true
             layout.disableStickyHeaders = true
         }
-//        for _ in 1...10 {
-            objects.append(TSDiscoverSectionModel())
-//        }
+        
+        TSNetRequestManager.sharedInstance.request(.GET, DiscoverSectionURL).validate().responseJSON { response in
+            switch response.result {
+            case .Success:
+                if let value = response.result.value {
+                    self.responseObjectData = JSON(value)["data"]
+                }
+            case .Failure(let error):
+                print(error)
+            }
+        }
     }
     
 //    override func prefersStatusBarHidden() -> Bool {
@@ -49,17 +72,17 @@ class TSDiscoverViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 10
+        return contentObjects.count
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return objects.count
+        return 1
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as? TSDiscoverShelfCollectionViewCell {
-            let model = objects[indexPath.row]
-            model.collectionView = cell.collectionView
+            let model = contentObjects[indexPath.section]
+            model.collectionViewController = self
             cell.collectionView.dataSource = model
             cell.collectionView.delegate = model
             return cell
@@ -71,12 +94,13 @@ class TSDiscoverViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         if UICollectionElementKindSectionHeader == kind  {
             if let sectionHeader = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "sectionHeader", forIndexPath: indexPath) as? TSDiscoverSectionHeader {
-                sectionHeader.textLabel.text = "\(indexPath.section + 1)"
+                
+                if let string = responseObjectData?["index"][indexPath.section]["title"].string {
+                    sectionHeader.textLabel.text = string
+                }
                 return sectionHeader
             }
-        }else
-        
-        if let header = collectionView.dequeueReusableSupplementaryViewOfKind(IOStickyHeaderParallaxHeader, withReuseIdentifier: "header", forIndexPath: indexPath) as? TSDiscoverBannerHeader {
+        }else if let header = collectionView.dequeueReusableSupplementaryViewOfKind(IOStickyHeaderParallaxHeader, withReuseIdentifier: "header", forIndexPath: indexPath) as? TSDiscoverBannerHeader {
             return header
         }
         return UICollectionReusableView()
