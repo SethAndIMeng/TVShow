@@ -13,6 +13,27 @@ import AlamofireObjectMapper
 class TSSeasonDetailViewController: UIViewController {
 
     var seasonID = ""
+    var seasonObject: TSSeasonResponseObject? {
+        didSet {
+            if let object = seasonObject {
+                if let sidString =  object.sid {
+                    seasonID = sidString
+                }else if let internalIdentifier = object.internalIdentifier {
+                    seasonID = "\(internalIdentifier)"
+                }
+                self.seasonDetail = TSSeasonDetail(seasonObject: object)
+            }
+        }
+    }
+    var seasonDetail: TSSeasonDetail? {
+        didSet {
+            if let detail = seasonDetail {
+                if self.isViewLoaded() {
+                    configView(detail)
+                }
+            }
+        }
+    }
     
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -32,23 +53,13 @@ class TSSeasonDetailViewController: UIViewController {
         TSNetRequestManager.sharedInstance.request(.GET, "http://api.rrmj.tv/v3/video/detail", parameters: parameters).responseObject(keyPath:"data.seasonDetail") { (response: Response<TSSeasonDetail, NSError>) in
             switch response.result {
             case .Success(let result):
-                self.titleLabel.text = result.title
-                self.enTitleLabel.text = result.enTitle
-                self.catalogLabel.text = result.cat
-                self.playStatus.text = result.playStatus
-                if let viewCount = result.viewCount {
-                    self.viewCountLabel.text = "\(viewCount)次"
-                }
-                if let score = result.score {
-                    self.scoreLabel.text = "\(score)分"
-                }
-                if let converString = result.cover {
-                    self.coverImageView.kf_setImageWithURL(NSURL(string: converString)!)
-                }
-                
+                self.configView(result)
             case.Failure(let errorInfo):
                 print(errorInfo)
             }
+        }
+        if let seasonDetail = self.seasonDetail {
+            self.configView(seasonDetail)
         }
     }
     
@@ -60,5 +71,22 @@ class TSSeasonDetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    func configView(result:TSSeasonDetail) {
+        self.titleLabel.text = result.title
+        self.enTitleLabel.text = result.enTitle
+        self.catalogLabel.text = result.cat
+        self.playStatus.text = result.playStatus
+        if let viewCount = result.viewCount {
+            self.viewCountLabel.text = "\(viewCount)次"
+        }
+        if let score = result.score {
+            self.scoreLabel.text = "\(score)分"
+        }
+        if let converString = result.cover {
+            self.coverImageView.kf_setImageWithURL(NSURL(string: converString)!, completionHandler: { (image, error, cacheType, imageURL) in
+                self.coverImageView.setNeedsDisplay()
+            })
+        }
     }
 }

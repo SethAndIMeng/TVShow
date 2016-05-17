@@ -136,6 +136,29 @@ public class TSSeasonDetail: NSObject, Mappable, NSCoding {
 
     }
 
+    public init(seasonObject:TSSeasonResponseObject) {
+        title = seasonObject.title
+        brief = seasonObject.brief
+        cat = seasonObject.cat
+        internalIdentifier = seasonObject.internalIdentifier
+        score = seasonObject.score
+        updateinfo = seasonObject.upInfo
+        sid = seasonObject.sid
+        cover = seasonObject.cover
+        enTitle = seasonObject.enTitle
+//        public var title: String?
+//        public var brief: String?
+//        public var cat: String?
+//        public var internalIdentifier: Int?
+//        public var seasonNo: Int?
+//        public var mark: String?
+//        public var score: Float?
+//        public var upInfo: Int?
+//        public var sid: String?
+//        public var cover: String?
+//        public var enTitle: String?
+    }
+    
     // MARK: ObjectMapper Initalizers
     /**
     Map a JSON object to this class using ObjectMapper

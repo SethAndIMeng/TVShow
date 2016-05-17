@@ -80,9 +80,7 @@ class TSDiscoverSectionModel: NSObject,UICollectionViewDataSource, UICollectionV
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let detailViewController = UIStoryboard(name: "Detail", bundle: NSBundle.mainBundle()).instantiateInitialViewController(){
             if let detail = detailViewController as? TSSeasonDetailViewController {
-                if let seasonid = objects[indexPath.item].internalIdentifier {
-                    detail.seasonID = "\(seasonid)"
-                }
+                detail.seasonObject = objects[indexPath.item]
                 self.collectionViewController?.navigationController?.pushViewController(detail, animated: true)
             }
         }
