@@ -50,6 +50,7 @@ public class IOStickyHeaderFlowLayout: UICollectionViewFlowLayout {
     adjustedRec.origin.y -= (self.parallaxHeaderReferenceSize?.height)!
     
     let attributes = super.layoutAttributesForElementsInRect(adjustedRec)
+//    return attributes
     var allItems = [UICollectionViewLayoutAttributes]()
     
     attributes?.forEach { itemAttributes in
@@ -57,8 +58,8 @@ public class IOStickyHeaderFlowLayout: UICollectionViewFlowLayout {
       allItems.append(itemAttributesCopy)
     }
     
-    let headers: NSMutableDictionary = NSMutableDictionary()
-    let lastCells: NSMutableDictionary = NSMutableDictionary()
+//    let headers: NSMutableDictionary = NSMutableDictionary()
+//    let lastCells: NSMutableDictionary = NSMutableDictionary()
     var visibleParallaxHeader: Bool = false
     
     allItems.forEach { attributes in
@@ -68,19 +69,19 @@ public class IOStickyHeaderFlowLayout: UICollectionViewFlowLayout {
       attributes.frame = frame
       
       let indexPath = attributes.indexPath
-      if attributes.representedElementKind == UICollectionElementKindSectionHeader {
-        headers.setObject(attributes, forKey: indexPath.section)
-      } else {
-        let currentAttribute = lastCells.objectForKey(indexPath.section)
-        if currentAttribute == nil || indexPath.row > currentAttribute?.indexPath.row {
-          lastCells.setObject(attributes, forKey: indexPath.section)
-        }
+//      if attributes.representedElementKind == UICollectionElementKindSectionHeader {
+//        headers.setObject(attributes, forKey: indexPath.section)
+//      } else {
+//        let currentAttribute = lastCells.objectForKey(indexPath.section)
+//        if currentAttribute == nil || indexPath.row > currentAttribute?.indexPath.row {
+//          lastCells.setObject(attributes, forKey: indexPath.section)
+//        }
         if indexPath.item == 0 && indexPath.section == 0 {
           visibleParallaxHeader = true
         }
-      }
+//      }
       
-      attributes.zIndex = 1
+//      attributes.zIndex = 1
     }
     
     if CGRectGetMinY(rect) <= 0 {
@@ -104,41 +105,41 @@ public class IOStickyHeaderFlowLayout: UICollectionViewFlowLayout {
       let height = max(0, maxY)
       
       
-      let maxHeight = self.parallaxHeaderReferenceSize!.height
-      let minHeight = self.parallaxHeaderMinimumReferenceSize.height
-      let progressiveness = (height - minHeight)/(maxHeight-minHeight)
-      currentAttribute.progressiveness = progressiveness
+//      let maxHeight = self.parallaxHeaderReferenceSize!.height
+//      let minHeight = self.parallaxHeaderMinimumReferenceSize.height
+//      let progressiveness = (height - minHeight)/(maxHeight-minHeight)
+//      currentAttribute.progressiveness = progressiveness
       
-      currentAttribute.zIndex = 0
+//      currentAttribute.zIndex = 0
       
       if self.parallaxHeaderAlwaysOnTop && height <= self.parallaxHeaderMinimumReferenceSize.height {
         let insertTop = self.collectionView?.contentInset.top
         y = (self.collectionView?.contentOffset.y)! + insertTop!
-        currentAttribute.zIndex = 2000
+//        currentAttribute.zIndex = 2000
       }
         y = y < 0 ? y : 0
       currentAttribute.frame = CGRectMake(frame.origin.x, y, frame.size.width, height)
       allItems.append(currentAttribute)
     }
     
-    if !self.disableStickyHeaders {
-      lastCells.keyEnumerator().forEach { obj in
-        //      for obj in lastCells.keyEnumerator() {
-        if let indexPath = obj.indexPath {
-          let indexPAthKey = indexPath.section
-          
-          var header = headers[indexPAthKey]
-          if header == nil {
-            header = self.layoutAttributesForSupplementaryViewOfKind(UICollectionElementKindSectionHeader, atIndexPath: NSIndexPath(forItem: 0, inSection: indexPath.section))
-            if let header:UICollectionViewLayoutAttributes = header as? UICollectionViewLayoutAttributes {
-              allItems.append(header)
-            }
-          }
-          
-          self.updateHeaderAttributesForLastCellAttributes(header as! UICollectionViewLayoutAttributes, lastCellAttributes: lastCells[indexPAthKey] as! UICollectionViewLayoutAttributes)
-        }
-      }
-    }
+//    if !self.disableStickyHeaders {
+//      lastCells.keyEnumerator().forEach { obj in
+//        //      for obj in lastCells.keyEnumerator() {
+//        if let indexPath = obj.indexPath {
+//          let indexPAthKey = indexPath.section
+//          
+//          var header = headers[indexPAthKey]
+//          if header == nil {
+//            header = self.layoutAttributesForSupplementaryViewOfKind(UICollectionElementKindSectionHeader, atIndexPath: NSIndexPath(forItem: 0, inSection: indexPath.section))
+//            if let header:UICollectionViewLayoutAttributes = header as? UICollectionViewLayoutAttributes {
+//              allItems.append(header)
+//            }
+//          }
+//          
+//          self.updateHeaderAttributesForLastCellAttributes(header as! UICollectionViewLayoutAttributes, lastCellAttributes: lastCells[indexPAthKey] as! UICollectionViewLayoutAttributes)
+//        }
+//      }
+//    }
     
     return allItems
   }

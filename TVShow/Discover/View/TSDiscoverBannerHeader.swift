@@ -10,15 +10,19 @@ import UIKit
 import MapKit
 
 class TSDiscoverBannerHeader: UICollectionViewCell {
-    @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+
+    //    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     // MARK: Public properties
     static let Kind = "StickyHeaderLayoutAttributesKind"
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        let screenBounds = UIScreen.mainScreen().bounds
-        heightConstraint.constant = 0.56 * screenBounds.width
+    
+    }
+    
+    func commonInit() {
+        
+        
     }
 }

@@ -14,7 +14,7 @@ import SwiftyJSON
 
 let DiscoverListURL = "http://api.rrmj.tv/v2/video/search"
 
-class TSDiscoverSectionModel: NSObject,UICollectionViewDataSource, UICollectionViewDelegate {
+class TSDiscoverSectionController: NSObject,UICollectionViewDataSource, UICollectionViewDelegate {
     var objects = [TSSeasonResponseObject]()
     var collectionViewController: UICollectionViewController?
     
@@ -30,22 +30,9 @@ class TSDiscoverSectionModel: NSObject,UICollectionViewDataSource, UICollectionV
         }
     }
 
-    //
-    //        // MARK: - Navigation
-    //
-    //        // In a storyboard-based application, you will often want to do a little preparation before navigation
-    //        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    //            // Get the new view controller using [segue destinationViewController].
-    //            // Pass the selected object to the new view controller.
-    //
-    //            if let indexPath = self.collectionView?.indexPathsForSelectedItems() {
-    //                let object = self.objects[indexPath[0].item]
-    //                let controller = segue.destinationViewController as? TSSeasonDetailViewController
-    //                if let sid = object.sid {
-    //                    controller?.seasonID = sid
-    //                }
-    //            }
-    //        }
+    func sectionReuseIdentifier() -> String {
+        return"\(DiscoverShelfCellReuseIdentifier)&\(self.objects.count)"
+    }
     
     // MARK: UICollectionViewDataSource
     
@@ -54,14 +41,13 @@ class TSDiscoverSectionModel: NSObject,UICollectionViewDataSource, UICollectionV
         return 1
     }
     
-    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return objects.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let reusedCell = collectionView.dequeueReusableCellWithReuseIdentifier(DiscoverCellreuseIdentifier, forIndexPath: indexPath) as? TSDiscoverCollectionViewCell
+        let reusedCell = collectionView.dequeueReusableCellWithReuseIdentifier(DiscoverCellReuseIdentifier, forIndexPath: indexPath) as? TSDiscoverCollectionViewCell
         let cell = reusedCell ?? TSDiscoverCollectionViewCell()
         
         // Configure the cell

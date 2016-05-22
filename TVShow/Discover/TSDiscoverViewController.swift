@@ -19,8 +19,10 @@ class TSDiscoverViewController: UICollectionViewController {
     var responseObjectData:JSON? {
         didSet {
             if let listArray = responseObjectData!["index"].array {
-                for responseSectionItem in listArray {
-                    let sectionModel = TSDiscoverSectionModel(json: responseSectionItem["seasonList"])
+                for sectionItem in listArray {
+                    let sectionModel = TSDiscoverSectionController(json: sectionItem["seasonList"])
+                    self.collectionView?.registerNib(UINib.init(nibName: "TSDiscoverShelfCollectionViewCell", bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier:sectionModel.sectionReuseIdentifier())
+                    print(sectionModel.sectionReuseIdentifier())
                     contentObjects.append(sectionModel)
                 }
                 self.collectionView?.reloadData()
@@ -28,7 +30,7 @@ class TSDiscoverViewController: UICollectionViewController {
         }
     }
     
-    var contentObjects = [TSDiscoverSectionModel]()
+    var contentObjects = [TSDiscoverSectionController]()
     // MARK: - Left Cycle
     
     override func didReceiveMemoryWarning() {
@@ -65,10 +67,6 @@ class TSDiscoverViewController: UICollectionViewController {
         }
     }
     
-//    override func prefersStatusBarHidden() -> Bool {
-//        return true
-//    }
-    
     // MARK: UICollectionViewDataSource
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -80,14 +78,13 @@ class TSDiscoverViewController: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as? TSDiscoverShelfCollectionViewCell {
-            let model = contentObjects[indexPath.section]
+        let model = contentObjects[indexPath.section]
+        if let cell = collectionView.dequeueReusableCellWithReuseIdentifier(model.sectionReuseIdentifier(), forIndexPath: indexPath) as? TSDiscoverShelfCollectionViewCell {
             model.collectionViewController = self
             cell.collectionView.dataSource = model
             cell.collectionView.delegate = model
             return cell
         }
-        
         return UICollectionViewCell()
     }
 

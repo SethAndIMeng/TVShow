@@ -8,7 +8,7 @@
 
 import UIKit
 
-let DiscoverCellreuseIdentifier = "TSDiscoverCollectionViewCell"
+let DiscoverCellReuseIdentifier = "TSDiscoverCollectionViewCell"
 
 class TSDiscoverCollectionViewCell: UICollectionViewCell {
 

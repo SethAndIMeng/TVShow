@@ -14,25 +14,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fkm-GX-FL0">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="A2i-YL-Xyh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="200" id="AU4-5F-c4g"/>
-                        </constraints>
-                    </mapView>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0Zc-Lb-EWC">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="fkm-GX-FL0" firstAttribute="top" secondItem="UC9-pz-w6t" secondAttribute="top" id="BgK-tG-5H0"/>
-                <constraint firstItem="fkm-GX-FL0" firstAttribute="leading" secondItem="UC9-pz-w6t" secondAttribute="leading" id="ONa-Rq-GdQ"/>
-                <constraint firstAttribute="trailing" secondItem="fkm-GX-FL0" secondAttribute="trailing" id="YJF-Wd-3qe"/>
+                <constraint firstItem="A2i-YL-Xyh" firstAttribute="top" secondItem="UC9-pz-w6t" secondAttribute="top" id="36S-vG-I9Y"/>
+                <constraint firstAttribute="bottom" secondItem="A2i-YL-Xyh" secondAttribute="bottom" id="Aka-LF-qb0"/>
+                <constraint firstAttribute="trailing" secondItem="A2i-YL-Xyh" secondAttribute="trailing" id="pvf-f3-fxQ"/>
+                <constraint firstItem="A2i-YL-Xyh" firstAttribute="leading" secondItem="UC9-pz-w6t" secondAttribute="leading" id="y0a-wy-dW9"/>
             </constraints>
             <size key="customSize" width="320" height="200"/>
-            <connections>
-                <outlet property="heightConstraint" destination="AU4-5F-c4g" id="v2D-fv-b7D"/>
-                <outlet property="mapView" destination="fkm-GX-FL0" id="30i-UC-tCa"/>
-            </connections>
             <point key="canvasLocation" x="293" y="261"/>
         </collectionViewCell>
     </objects>
