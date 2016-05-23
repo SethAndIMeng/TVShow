@@ -83,6 +83,7 @@ class TSDiscoverViewController: UICollectionViewController {
             model.collectionViewController = self
             cell.collectionView.dataSource = model
             cell.collectionView.delegate = model
+            print(cell)
             return cell
         }
         return UICollectionViewCell()
