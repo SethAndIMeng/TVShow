@@ -18,7 +18,7 @@ let DiscoverSectionURL = "http://api.rrmj.tv/v2/video/indexInfo"
 class TSDiscoverViewController: UICollectionViewController {
     var responseObjectData:JSON? {
         didSet {
-            if let listArray = responseObjectData!["index"].array {
+            if let listArray = responseObjectData?["index"].array {
                 for sectionItem in listArray {
                     let sectionModel = TSDiscoverSectionController(json: sectionItem["seasonList"])
                     self.collectionView?.registerNib(UINib.init(nibName: "TSDiscoverShelfCollectionViewCell", bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier:sectionModel.sectionReuseIdentifier())
@@ -27,10 +27,15 @@ class TSDiscoverViewController: UICollectionViewController {
                 }
                 self.collectionView?.reloadData()
             }
+            if let listArray = responseObjectData?["album"].array {
+                bannerObjects += listArray
+            }
         }
     }
     
     var contentObjects = [TSDiscoverSectionController]()
+    var bannerObjects = [JSON]()
+    
     // MARK: - Left Cycle
     
     override func didReceiveMemoryWarning() {
@@ -99,6 +104,7 @@ class TSDiscoverViewController: UICollectionViewController {
                 return sectionHeader
             }
         }else if let header = collectionView.dequeueReusableSupplementaryViewOfKind(IOStickyHeaderParallaxHeader, withReuseIdentifier: "header", forIndexPath: indexPath) as? TSDiscoverBannerHeader {
+            header.objects = self.bannerObjects
             return header
         }
         return UICollectionReusableView()

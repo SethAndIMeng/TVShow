@@ -8,12 +8,19 @@
 
 import UIKit
 import MapKit
+import SwiftyJSON
 
 class TSDiscoverBannerHeader: UICollectionViewCell, InfiniteCollectionViewDataSource {
 
     @IBOutlet weak var infiniteView: InfiniteCollectionView!
     // MARK: Public properties
 
+    var objects: [JSON]?{
+        didSet{
+            self.infiniteView.reloadData()
+        }
+    }
+    
     static let Kind = "StickyHeaderLayoutAttributesKind"
     
     override func awakeFromNib() {
@@ -35,13 +42,19 @@ class TSDiscoverBannerHeader: UICollectionViewCell, InfiniteCollectionViewDataSo
     }
     
     func infiniteCollectionView(collectionView: InfiniteCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        if let aObjects = self.objects {
+            return aObjects.count
+        }
+        return 0
     }
     
     func infiniteCollectionView(collectionView: InfiniteCollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let reusedCell = collectionView.dequeueReusableCellWithReuseIdentifier("TSDiscoverBannerCollectionViewCell", forIndexPath: indexPath) as? TSDiscoverBannerCollectionViewCell
-        reusedCell?.titleLabel.text = "\(indexPath.row)"
-//        reusedCell?.catalogLabel.text = "c\(indexPath.row)"
+        if let aObjects = objects {
+            let object = aObjects[indexPath.row]
+            reusedCell?.titleLabel.text = object["brief"].string
+            reusedCell?.imageView.kf_setImageWithURL(NSURL(string:object["coverUrl"].string!)!)
+        }
         return reusedCell!
     }
 }
