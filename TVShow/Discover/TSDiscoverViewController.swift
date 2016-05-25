@@ -53,7 +53,7 @@ class TSDiscoverViewController: UICollectionViewController {
         let screenBounds = UIScreen.mainScreen().bounds
         // setup layout
         if let layout: IOStickyHeaderFlowLayout = self.collectionView?.collectionViewLayout as? IOStickyHeaderFlowLayout {
-            layout.parallaxHeaderReferenceSize = CGSizeMake(screenBounds.width, 0.58 * screenBounds.width)
+            layout.parallaxHeaderReferenceSize = CGSizeMake(screenBounds.width, 0.54 * screenBounds.width)
             layout.parallaxHeaderMinimumReferenceSize = CGSizeMake(screenBounds.width, 0)
             layout.itemSize = CGSizeMake(UIScreen.mainScreen().bounds.size.width, layout.itemSize.height)
             layout.parallaxHeaderAlwaysOnTop = true
