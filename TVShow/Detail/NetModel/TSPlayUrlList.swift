@@ -9,7 +9,7 @@ import Foundation
 import SwiftyJSON
 import ObjectMapper
 
-public class TSPlayUrlList: NSObject, Mappable, NSCoding {
+public class TSPlayUrlList: NSObject, Mappable {
 
     // MARK: Declaration for string constants to be used to decode and also serialize.
 	internal let kTSPlayUrlListSiteKey: String = "site"
@@ -53,7 +53,7 @@ public class TSPlayUrlList: NSObject, Mappable, NSCoding {
     Map a JSON object to this class using ObjectMapper
     - parameter map: A mapping from ObjectMapper
     */
-    required public init?(_ map: Map){
+    required public init?(map: Map){
 
     }
 
@@ -68,45 +68,4 @@ public class TSPlayUrlList: NSObject, Mappable, NSCoding {
 		episodeSid <- map[kTSPlayUrlListEpisodeSidKey]
 
     }
-
-    /**
-    Generates description of the object in the form of a NSDictionary.
-    - returns: A Key value pair containing all valid values in the object.
-    */
-    public func dictionaryRepresentation() -> [String : AnyObject ] {
-
-        var dictionary: [String : AnyObject ] = [ : ]
-		if site != nil {
-			dictionary.updateValue(site!, forKey: kTSPlayUrlListSiteKey)
-		}
-		if playLink != nil {
-			dictionary.updateValue(playLink!, forKey: kTSPlayUrlListPlayLinkKey)
-		}
-		if internalIdentifier != nil {
-			dictionary.updateValue(internalIdentifier!, forKey: kTSPlayUrlListInternalIdentifierKey)
-		}
-		if episodeSid != nil {
-			dictionary.updateValue(episodeSid!, forKey: kTSPlayUrlListEpisodeSidKey)
-		}
-
-        return dictionary
-    }
-
-    // MARK: NSCoding Protocol
-    required public init(coder aDecoder: NSCoder) {
-		self.site = aDecoder.decodeObjectForKey(kTSPlayUrlListSiteKey) as? String
-		self.playLink = aDecoder.decodeObjectForKey(kTSPlayUrlListPlayLinkKey) as? String
-		self.internalIdentifier = aDecoder.decodeObjectForKey(kTSPlayUrlListInternalIdentifierKey) as? Int
-		self.episodeSid = aDecoder.decodeObjectForKey(kTSPlayUrlListEpisodeSidKey) as? String
-
-    }
-
-    public func encodeWithCoder(aCoder: NSCoder) {
-		aCoder.encodeObject(site, forKey: kTSPlayUrlListSiteKey)
-		aCoder.encodeObject(playLink, forKey: kTSPlayUrlListPlayLinkKey)
-		aCoder.encodeObject(internalIdentifier, forKey: kTSPlayUrlListInternalIdentifierKey)
-		aCoder.encodeObject(episodeSid, forKey: kTSPlayUrlListEpisodeSidKey)
-
-    }
-
 }

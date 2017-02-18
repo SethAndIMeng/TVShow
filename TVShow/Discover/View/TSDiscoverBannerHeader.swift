@@ -30,7 +30,7 @@ class TSDiscoverBannerHeader: UICollectionViewCell, InfiniteCollectionViewDataSo
     }
     
     func commonInit() {
-        self.infiniteView?.registerNib(UINib.init(nibName: "TSDiscoverBannerCollectionViewCell", bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier:"TSDiscoverBannerCollectionViewCell")
+        self.infiniteView?.register(UINib.init(nibName: "TSDiscoverBannerCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier:"TSDiscoverBannerCollectionViewCell")
         self.infiniteView.infiniteDataSource = self
     }
     
@@ -49,11 +49,13 @@ class TSDiscoverBannerHeader: UICollectionViewCell, InfiniteCollectionViewDataSo
     }
     
     func infiniteCollectionView(collectionView: InfiniteCollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let reusedCell = collectionView.dequeueReusableCellWithReuseIdentifier("TSDiscoverBannerCollectionViewCell", forIndexPath: indexPath) as? TSDiscoverBannerCollectionViewCell
+        let reusedCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TSDiscoverBannerCollectionViewCell", for: indexPath as IndexPath) as? TSDiscoverBannerCollectionViewCell
         if let aObjects = objects {
             let object = aObjects[indexPath.row]
+    
             reusedCell?.titleLabel.text = object["brief"].string
-            reusedCell?.imageView.kf_setImageWithURL(NSURL(string:object["coverUrl"].string!)!)
+            let url = URL(string: object["coverUrl"].string!)
+            reusedCell?.imageView.kf.setImage(with:url)
         }
         return reusedCell!
     }

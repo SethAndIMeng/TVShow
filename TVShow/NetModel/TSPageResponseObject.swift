@@ -34,7 +34,7 @@ import Foundation
 import SwiftyJSON
 import ObjectMapper
 
-class TSPageResponseObject: NSObject, Mappable, NSCoding {
+class TSPageResponseObject: NSObject, Mappable {
     
     // MARK: Declaration for string constants to be used to decode and also serialize.
     internal let kTSDataCurrentPageKey: String = "currentPage"
@@ -82,7 +82,7 @@ class TSPageResponseObject: NSObject, Mappable, NSCoding {
      Map a JSON object to this class using ObjectMapper
      - parameter map: A mapping from ObjectMapper
      */
-    required init?(_ map: Map){
+    required init?(map: Map){
         
     }
     
@@ -96,43 +96,4 @@ class TSPageResponseObject: NSObject, Mappable, NSCoding {
         total <- map[kTSDataTotalKey]
         
     }
-    
-    /**
-     Generates description of the object in the form of a NSDictionary.
-     - returns: A Key value pair containing all valid values in the object.
-     */
-    internal func dictionaryRepresentation() -> [String : AnyObject ] {
-        
-        var dictionary: [String : AnyObject ] = [ : ]
-        if currentPage != nil {
-            dictionary.updateValue(currentPage!, forKey: kTSDataCurrentPageKey)
-        }
-//        if results?.count > 0 {
-//            var temp: [AnyObject] = []
-////            for item in results! {
-////                temp.append(item.dictionaryRepresentation())
-////            }
-//            dictionary.updateValue(temp, forKey: kTSDataResultsKey)
-//        }
-        if total != nil {
-            dictionary.updateValue(total!, forKey: kTSDataTotalKey)
-        }
-        
-        return dictionary
-    }
-    
-    // MARK: NSCoding Protocol
-    required internal init(coder aDecoder: NSCoder) {
-        self.currentPage = aDecoder.decodeObjectForKey(kTSDataCurrentPageKey) as? Int
-        self.results = aDecoder.decodeObjectForKey(kTSDataResultsKey) as? [Dictionary<String, AnyObject>]
-        self.total = aDecoder.decodeObjectForKey(kTSDataTotalKey) as? Int
-    }
-    
-    internal func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(currentPage, forKey: kTSDataCurrentPageKey)
-        aCoder.encodeObject(results, forKey: kTSDataResultsKey)
-        aCoder.encodeObject(total, forKey: kTSDataTotalKey)
-        
-    }
-    
 }

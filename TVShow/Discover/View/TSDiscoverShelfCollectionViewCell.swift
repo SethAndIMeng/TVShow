@@ -23,7 +23,7 @@ class TSDiscoverShelfCollectionView: UICollectionView {
         self.commonInit()
     }
     func commonInit(){
-        self.registerNib(UINib.init(nibName: "TSDiscoverCollectionViewCell", bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: DiscoverCellReuseIdentifier)
+        self.register(UINib.init(nibName: "TSDiscoverCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: DiscoverCellReuseIdentifier)
 
     }
 }

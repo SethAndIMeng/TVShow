@@ -30,69 +30,63 @@ class TSSeasonListViewController: UITableViewController{
         // Do any additional setup after loading the view, typically from a nib.
         let api = "http://api.rrmj.tv/v2/video/search"
         let parameters = ["order": "desc","sort": "createTime","mark": "update","page": "1","rows": "100"]
-        TSNetRequestManager.sharedInstance.request(.GET, api, parameters: parameters).responseArray(keyPath:"data.results") { (response: Response<[TSSeasonResponseObject], NSError>) in
+        TSNetRequestManager.sharedInstance.request(api, parameters: parameters).responseArray(keyPath:"data.results") { (response: DataResponse<[TSSeasonResponseObject]>) in
             switch response.result {
-            case .Success(let result):
+            case .success(let result):
                 self.objects += result
                 self.tableView?.reloadData()
-            case .Failure(let errorInfo):
+            case .failure(let errorInfo):
                 print(errorInfo)
             }
         }
     }
     // MARK: - Segues
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let object = objects[indexPath.row]
-                if let controller = segue.destinationViewController as? TSSeasonDetailViewController {
+                if let controller = segue.destination as? TSSeasonDetailViewController {
                     if let sid = object.sid {
                         controller.seasonID = sid
                     }
-//                    controller.detailItem = object
-//                    controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-//                    controller.navigationItem.leftItemsSupplementBackButton = true
+                    //                    controller.detailItem = object
+                    //                    controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+                    //                    controller.navigationItem.leftItemsSupplementBackButton = true
                 }
             }
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("\(object_getClass(self)).viewWillAppear(\(animated))")
     }
 
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return objects.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //既然dequeueReusableCellWithIdentifier声明了其optional的可能性，那么就从语法上接受这个假设
-        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") ?? UITableViewCell(style: .Default, reuseIdentifier: "cell")
-//        if (cell == nil) {
-//            cell = UITableViewCell.init(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
-//        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+        
         let season = objects[indexPath.row]
         
         cell.textLabel?.text = season.title
         cell.detailTextLabel?.text = season.brief
-        if let cover = season.cover, URL = NSURL(string: cover) {
-            //URL不允许optional
-            cell.imageView?.kf_setImageWithURL(URL, completionHandler: { (image, error, cacheType, imageURL) -> () in
-                cell.setNeedsLayout()
-            })
-        }
+        cell.imageView?.kf.setImage(with: URL(string: season.cover!))
+        
         return cell
     }
     
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        let viewController = TSSeasonDetailViewController()
-//        let season = dataSource[indexPath.row]
-//        viewController.seasonID = season.sid
-//        navigationController?.pushViewController(viewController, animated: true)
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = TSSeasonDetailViewController()
+        let season = objects[indexPath.row]
+        viewController.seasonID = season.sid!
+        navigationController?.pushViewController(viewController, animated: true)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

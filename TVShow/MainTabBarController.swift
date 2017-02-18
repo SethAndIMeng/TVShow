@@ -11,15 +11,15 @@ import UIKit
 class MainTabBarController: UITabBarController {
     //写一个初始化用的类
     private static func initNavController(storyboardName: String) -> UINavigationController {
-        if let viewController = UIStoryboard(name: storyboardName,bundle: NSBundle.mainBundle()).instantiateInitialViewController() {
+        if let viewController = UIStoryboard(name: storyboardName,bundle: Bundle.main).instantiateInitialViewController() {
             return UINavigationController(rootViewController: viewController)
         } else {
             return UINavigationController(rootViewController: UIViewController())
         }
     }
     
-    let discoverNavController = MainTabBarController.initNavController("Discover")
-    let searchNavController = MainTabBarController.initNavController("Search")
+    let discoverNavController = MainTabBarController.initNavController(storyboardName: "Discover")
+    let searchNavController = MainTabBarController.initNavController(storyboardName: "Search")
 //    let listNavController = MainTabBarController.initNavController("List")
     
 //    required init?(coder aDecoder: NSCoder) { //required就不能（不需要）再写override了

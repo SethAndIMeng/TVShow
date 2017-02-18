@@ -28,8 +28,8 @@ class TSSeasonDetailViewController: UIViewController {
     var seasonDetail: TSSeasonDetail? {
         didSet {
             if let detail = seasonDetail {
-                if self.isViewLoaded() {
-                    configView(detail)
+                if self.isViewLoaded {
+                    configView(result: detail)
                 }
             }
         }
@@ -50,20 +50,22 @@ class TSSeasonDetailViewController: UIViewController {
         
         let parameters = ["seasonId":seasonID, "userId":""]
         
-        TSNetRequestManager.sharedInstance.request(.GET, "http://api.rrmj.tv/v3/video/detail", parameters: parameters).responseObject(keyPath:"data.seasonDetail") { (response: Response<TSSeasonDetail, NSError>) in
+        
+        TSNetRequestManager.sharedInstance.request("http://api.rrmj.tv/v3/video/detail", parameters: parameters).responseObject(keyPath: "data.seasonDetail") { (response: DataResponse<TSSeasonDetail>) in
             switch response.result {
-            case .Success(let result):
-                self.configView(result)
-            case.Failure(let errorInfo):
+            case.success(let result):
+                self.configView(result: result)
+            case.failure(let errorInfo):
                 print(errorInfo)
             }
         }
+        
         if let seasonDetail = self.seasonDetail {
-            self.configView(seasonDetail)
+            self.configView(result: seasonDetail)
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("\(object_getClass(self)).viewWillAppear(\(animated))")
     }
@@ -84,9 +86,7 @@ class TSSeasonDetailViewController: UIViewController {
             self.scoreLabel.text = "\(score)分"
         }
         if let converString = result.cover {
-            self.coverImageView.kf_setImageWithURL(NSURL(string: converString)!, completionHandler: { (image, error, cacheType, imageURL) in
-                self.coverImageView.setNeedsDisplay()
-            })
+            self.coverImageView.kf.setImage(with: URL(string: converString))
         }
     }
 }

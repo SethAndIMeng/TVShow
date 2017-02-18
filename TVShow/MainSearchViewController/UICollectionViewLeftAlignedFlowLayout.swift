@@ -7,12 +7,13 @@
 //
 
 import UIKit
-import CGRectExtensions
+//import CGRectExtensions
 
 class UICollectionViewLeftAlignedFlowLayout: UICollectionViewFlowLayout {
-    override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        guard let oldAttributes = super.layoutAttributesForElementsInRect(rect) else {
-            return super.layoutAttributesForElementsInRect(rect)
+    
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        guard let oldAttributes = super.layoutAttributesForElements(in: rect) else {
+            return super.layoutAttributesForElements(in: rect)
         }
         let spacing = minimumInteritemSpacing // REPLACE WITH WHAT SPACING YOU NEED
         var newAttributes = [UICollectionViewLayoutAttributes]()
@@ -24,7 +25,7 @@ class UICollectionViewLeftAlignedFlowLayout: UICollectionViewFlowLayout {
             if i == 0 {
                 leftMargin = sectionInset.left
             } else {
-                if (abs(attributes.frame.center.y - previousAttributes.frame.center.y) > 0.1) { //换行
+                if (abs(attributes.center.y - previousAttributes.center.y) > 0.1) { //换行
                     leftMargin = sectionInset.left
                 }
                 else { //不换行

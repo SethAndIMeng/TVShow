@@ -43,58 +43,58 @@ class MainSearchCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
 
-
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return 13
     }
     
-    func stringForKeywordLabelTextAt(indexPath: NSIndexPath) -> String {
+    func stringForKeywordLabelTextAt(indexPath: IndexPath) -> String {
         
-        let char: Character
+        let char: String
         if indexPath.section == 0 {
-            char = Character("热")
+            char = "热"
         } else if indexPath.section == 1 {
-            char = Character("近")
+            char = "近"
         } else {
-            char = Character("空")
+            char = "空"
         }
-        let value = String(count: indexPath.row + 1, repeatedValue: char)
+        let value = String(repeating:char, count: indexPath.row + 1)
+//        let value = String(count: indexPath.row + 1, repeatedValue: char)
+        
+        
         return value
     }
 
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! MainSearchCollectionViewCell
-        
-        cell.keywordLabel.text = stringForKeywordLabelTextAt(indexPath);
-
-        // Configure the cell
-    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! MainSearchCollectionViewCell
+        cell.keywordLabel.text = stringForKeywordLabelTextAt(indexPath: indexPath)
         return cell
     }
-    
-    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "Header", forIndexPath: indexPath) as! MainSearchHeaderCollectionReusableView
-        if indexPath.section == 0 {
+
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath) as! MainSearchHeaderCollectionReusableView
+        switch indexPath.section {
+        case 0:
             header.titleLabel.text = "热门搜索"
-        } else if indexPath.section == 1 {
+        case 1:
             header.titleLabel.text = "最近搜索"
+        default: break
         }
-        return header;
+        return header
+        
     }
     
     //设置每个cell大小
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let text = stringForKeywordLabelTextAt(indexPath) as NSString
-        let size = text.boundingRectWithSize(CGSize(width: 300, height: 50), options: .UsesFontLeading, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(17)], context: nil).size
-        
-        return CGSize(width: size.width + 4, height: size.height + 4)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let text = stringForKeywordLabelTextAt(indexPath: indexPath) as NSString
+        let size = text.boundingRect(with: CGSize(width:300,height:50), options: NSStringDrawingOptions.usesFontLeading, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 17)], context: nil).size
+        return CGSize(width: size.width+4, height:size.height+4)
     }
+
 
     // MARK: UICollectionViewDelegate
 

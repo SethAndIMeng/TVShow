@@ -9,7 +9,7 @@ import Foundation
 import SwiftyJSON
 import ObjectMapper
 
-public class TSRecommend: NSObject, Mappable, NSCoding {
+public class TSRecommend: NSObject, Mappable {
 
     // MARK: Declaration for string constants to be used to decode and also serialize.
 	internal let kTSRecommendTitleKey: String = "title"
@@ -71,7 +71,7 @@ public class TSRecommend: NSObject, Mappable, NSCoding {
     Map a JSON object to this class using ObjectMapper
     - parameter map: A mapping from ObjectMapper
     */
-    required public init?(_ map: Map){
+    required public init?(map: Map){
 
     }
 
@@ -92,73 +92,4 @@ public class TSRecommend: NSObject, Mappable, NSCoding {
 		enTitle <- map[kTSRecommendEnTitleKey]
 
     }
-
-    /**
-    Generates description of the object in the form of a NSDictionary.
-    - returns: A Key value pair containing all valid values in the object.
-    */
-    public func dictionaryRepresentation() -> [String : AnyObject ] {
-
-        var dictionary: [String : AnyObject ] = [ : ]
-		if title != nil {
-			dictionary.updateValue(title!, forKey: kTSRecommendTitleKey)
-		}
-		if cat != nil {
-			dictionary.updateValue(cat!, forKey: kTSRecommendCatKey)
-		}
-		if internalIdentifier != nil {
-			dictionary.updateValue(internalIdentifier!, forKey: kTSRecommendInternalIdentifierKey)
-		}
-		if seasonNo != nil {
-			dictionary.updateValue(seasonNo!, forKey: kTSRecommendSeasonNoKey)
-		}
-		dictionary.updateValue(finish, forKey: kTSRecommendFinishKey)
-		if score != nil {
-			dictionary.updateValue(score!, forKey: kTSRecommendScoreKey)
-		}
-		if upInfo != nil {
-			dictionary.updateValue(upInfo!, forKey: kTSRecommendUpInfoKey)
-		}
-		if sid != nil {
-			dictionary.updateValue(sid!, forKey: kTSRecommendSidKey)
-		}
-		if cover != nil {
-			dictionary.updateValue(cover!, forKey: kTSRecommendCoverKey)
-		}
-		if enTitle != nil {
-			dictionary.updateValue(enTitle!, forKey: kTSRecommendEnTitleKey)
-		}
-
-        return dictionary
-    }
-
-    // MARK: NSCoding Protocol
-    required public init(coder aDecoder: NSCoder) {
-		self.title = aDecoder.decodeObjectForKey(kTSRecommendTitleKey) as? String
-		self.cat = aDecoder.decodeObjectForKey(kTSRecommendCatKey) as? String
-		self.internalIdentifier = aDecoder.decodeObjectForKey(kTSRecommendInternalIdentifierKey) as? Int
-		self.seasonNo = aDecoder.decodeObjectForKey(kTSRecommendSeasonNoKey) as? Int
-		self.finish = aDecoder.decodeBoolForKey(kTSRecommendFinishKey)
-		self.score = aDecoder.decodeObjectForKey(kTSRecommendScoreKey) as? Float
-		self.upInfo = aDecoder.decodeObjectForKey(kTSRecommendUpInfoKey) as? Int
-		self.sid = aDecoder.decodeObjectForKey(kTSRecommendSidKey) as? String
-		self.cover = aDecoder.decodeObjectForKey(kTSRecommendCoverKey) as? String
-		self.enTitle = aDecoder.decodeObjectForKey(kTSRecommendEnTitleKey) as? String
-
-    }
-
-    public func encodeWithCoder(aCoder: NSCoder) {
-		aCoder.encodeObject(title, forKey: kTSRecommendTitleKey)
-		aCoder.encodeObject(cat, forKey: kTSRecommendCatKey)
-		aCoder.encodeObject(internalIdentifier, forKey: kTSRecommendInternalIdentifierKey)
-		aCoder.encodeObject(seasonNo, forKey: kTSRecommendSeasonNoKey)
-		aCoder.encodeBool(finish, forKey: kTSRecommendFinishKey)
-		aCoder.encodeObject(score, forKey: kTSRecommendScoreKey)
-		aCoder.encodeObject(upInfo, forKey: kTSRecommendUpInfoKey)
-		aCoder.encodeObject(sid, forKey: kTSRecommendSidKey)
-		aCoder.encodeObject(cover, forKey: kTSRecommendCoverKey)
-		aCoder.encodeObject(enTitle, forKey: kTSRecommendEnTitleKey)
-
-    }
-
 }

@@ -11,7 +11,7 @@ import UIKit
 @objc
 public protocol InfiniteCollectionViewDataSource {
 //    func cellForItemAtIndexPath(collectionView: UICollectionView, dequeueIndexPath: NSIndexPath, indexPath: NSIndexPath) -> UICollectionViewCell
-    optional var infiniteCount: Int {get}
+    @objc optional var infiniteCount: Int {get}
     
     @available(iOS 6.0, *)
     func infiniteCollectionView(collectionView: InfiniteCollectionView, numberOfItemsInSection section: Int) -> Int
@@ -49,7 +49,7 @@ public class InfiniteCollectionView: UICollectionView {
 //    }
     
     private static let defaultIdentifier = "Cell"
-    private var timer: NSTimer?
+    private var timer: Timer?
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -61,7 +61,7 @@ public class InfiniteCollectionView: UICollectionView {
     }
     
     func configure() {
-        self.pagingEnabled = true
+        self.isPagingEnabled = true
         self.dataSource = self
         self.delegate = self
         self.setUpTimer()
@@ -73,18 +73,18 @@ public class InfiniteCollectionView: UICollectionView {
         self.tearDownTimer()
         if !self.autoScroll {return}
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: #selector(timerFire), userInfo: nil, repeats: true)
-        NSRunLoop.mainRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
+        timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(timerFire), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: RunLoopMode.commonModes)
     }
     func tearDownTimer() {
         self.timer?.invalidate()
     }
     
-    func timerFire(timer: NSTimer) {
+    func timerFire(timer: Timer) {
         let layout = self.collectionViewLayout as! UICollectionViewFlowLayout
         let currentOffset = self.contentOffset.x
         let targetOffset = currentOffset + layout.itemSize.width + layout.minimumLineSpacing + layout.sectionInset.left + layout.sectionInset.right
-        self.setContentOffset(CGPoint(targetOffset,contentOffset.y), animated: true)
+        self.setContentOffset(CGPoint(x:targetOffset,y:contentOffset.y), animated: true)
     }
 }
 
@@ -93,23 +93,26 @@ extension InfiniteCollectionView: UICollectionViewDataSource  {
         return 3
     }
     
-    public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let number = (infiniteDataSource!.infiniteCollectionView(collectionView as! InfiniteCollectionView, numberOfItemsInSection: section) * infiniteCount)
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        let number = (infiniteDataSource?.infiniteCollectionView(collectionView: collectionView as! InfiniteCollectionView, numberOfItemsInSection: section))! * infiniteCount
+        
         return number
     }
     
-    public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let originIndexPath = NSIndexPath(forItem: (indexPath.item % infiniteCount), inSection: indexPath.section)
-        return infiniteDataSource!.infiniteCollectionView(collectionView as! InfiniteCollectionView, cellForItemAtIndexPath: originIndexPath)
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let originIndexPath = NSIndexPath(item: (indexPath.item % infiniteCount), section: indexPath.section)
+        return infiniteDataSource!.infiniteCollectionView(collectionView: collectionView as! InfiniteCollectionView, cellForItemAtIndexPath: originIndexPath)
     }
 }
 
 // MARK: - private
 extension InfiniteCollectionView: UICollectionViewDelegate {
     
-    public func scrollViewDidScroll(scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let layout = self.collectionViewLayout as! UICollectionViewFlowLayout
-        let itemCount = self.infiniteDataSource?.infiniteCollectionView(self, numberOfItemsInSection: 0)
+        let itemCount = self.infiniteDataSource?.infiniteCollectionView(collectionView: scrollView as! InfiniteCollectionView, numberOfItemsInSection: 0);
         
         let pageWidth = layout.itemSize.width + layout.minimumLineSpacing + layout.sectionInset.left + layout.sectionInset.right
         let periodOffset = pageWidth * CGFloat(itemCount!)
@@ -118,9 +121,9 @@ extension InfiniteCollectionView: UICollectionViewDelegate {
         
         let offsetX = scrollView.contentOffset.x;
         if (offsetX > offsetActivatingMoveToBeginning) {
-            scrollView.contentOffset = CGPointMake((offsetX - periodOffset), 0);
+            scrollView.contentOffset = CGPoint(x:(offsetX - periodOffset), y:0);
         } else if (offsetX < offsetActivatingMoveToEnd) {
-            scrollView.contentOffset = CGPointMake((offsetX + periodOffset), 0);
+            scrollView.contentOffset = CGPoint(x:(offsetX + periodOffset), y:0);
         }
     }
 }

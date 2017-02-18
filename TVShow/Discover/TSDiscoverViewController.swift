@@ -13,23 +13,32 @@ import SwiftyJSON
 
 private let reuseIdentifier = "Cell"
 
-let DiscoverSectionURL = "http://api.rrmj.tv/v2/video/indexInfo"
+//let DiscoverSectionURL = "http://api.douban.com/v2/movie/top250"
+let DiscoverSectionURL = "http://api.douban.com/v2/movie/in_theaters"
+//let DiscoverSectionURL = "https://m.douban.com/rexxar/api/v2/subject_collection/movie_showing/items?os=ios"
 
 class TSDiscoverViewController: UICollectionViewController {
     var responseObjectData:JSON? {
         didSet {
-            if let listArray = responseObjectData?["index"].array {
-                for sectionItem in listArray {
-                    let sectionModel = TSDiscoverSectionController(json: sectionItem["seasonList"])
-                    self.collectionView?.registerNib(UINib.init(nibName: "TSDiscoverShelfCollectionViewCell", bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier:sectionModel.sectionReuseIdentifier())
-                    print(sectionModel.sectionReuseIdentifier())
-                    contentObjects.append(sectionModel)
-                }
-                self.collectionView?.reloadData()
-            }
-            if let listArray = responseObjectData?["album"].array {
-                bannerObjects += listArray
-            }
+            let sectionModel = TSDiscoverSectionController(json: (responseObjectData!["subjects"]))
+            self.collectionView?.register(UINib.init(nibName: "TSDiscoverShelfCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier:sectionModel.sectionReuseIdentifier())
+            print(sectionModel.sectionReuseIdentifier())
+            contentObjects.append(sectionModel)
+            
+            self.collectionView?.reloadData()
+            
+//            if let listArray = responseObjectData?["subjects"].array {
+//                for sectionItem in listArray {
+//                    let sectionModel = TSDiscoverSectionController(json: sectionItem)
+//                    self.collectionView?.register(UINib.init(nibName: "TSDiscoverShelfCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier:sectionModel.sectionReuseIdentifier())
+//                    print(sectionModel.sectionReuseIdentifier())
+//                    contentObjects.append(sectionModel)
+//                }
+//                self.collectionView?.reloadData()
+//            }
+//            if let listArray = responseObjectData?["album"].array {
+//                bannerObjects += listArray
+//            }
         }
     }
     
@@ -47,68 +56,66 @@ class TSDiscoverViewController: UICollectionViewController {
         super.viewDidLoad()
         
         // Register cell classes
-        let headerNib = UINib(nibName: "TSDiscoverBannerHeader", bundle: NSBundle.mainBundle())
-        self.collectionView!.registerNib(headerNib, forSupplementaryViewOfKind: IOStickyHeaderParallaxHeader, withReuseIdentifier: "header")
+        let headerNib = UINib(nibName: "TSDiscoverBannerHeader", bundle: Bundle.main)
+        self.collectionView!.register(headerNib, forSupplementaryViewOfKind: IOStickyHeaderParallaxHeader, withReuseIdentifier: "header")
         
-        let screenBounds = UIScreen.mainScreen().bounds
+        let screenBounds = UIScreen.main.bounds
         // setup layout
         if let layout: IOStickyHeaderFlowLayout = self.collectionView?.collectionViewLayout as? IOStickyHeaderFlowLayout {
-            layout.parallaxHeaderReferenceSize = CGSizeMake(screenBounds.width, 0.54 * screenBounds.width)
-            layout.parallaxHeaderMinimumReferenceSize = CGSizeMake(screenBounds.width, 0)
-            layout.itemSize = CGSizeMake(UIScreen.mainScreen().bounds.size.width, layout.itemSize.height)
+            layout.parallaxHeaderReferenceSize = CGSize(width: screenBounds.width, height:0.54 * screenBounds.width)
+            layout.parallaxHeaderMinimumReferenceSize = CGSize(width: screenBounds.width, height: 0)
+            layout.itemSize = CGSize(width: UIScreen.main.bounds.size.width, height: layout.itemSize.height)
             layout.parallaxHeaderAlwaysOnTop = true
             layout.disableStickyHeaders = true
         }
         
-        TSNetRequestManager.sharedInstance.request(.GET, DiscoverSectionURL).validate().responseJSON { response in
+        TSNetRequestManager.sharedInstance.request(DiscoverSectionURL).validate().responseJSON { response in
             switch response.result {
-            case .Success:
-                if let value = response.result.value {
-                    self.responseObjectData = JSON(value)["data"]
-                }
-            case .Failure(let error):
+            case .success(let value):
+                self.responseObjectData = JSON(value)
+            case .failure(let error):
                 print(error)
             }
         }
     }
     
     // MARK: UICollectionViewDataSource
-    
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return contentObjects.count
     }
     
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
     
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let model = contentObjects[indexPath.section]
-        if let cell = collectionView.dequeueReusableCellWithReuseIdentifier(model.sectionReuseIdentifier(), forIndexPath: indexPath) as? TSDiscoverShelfCollectionViewCell {
-            model.collectionViewController = self
-            cell.collectionView.dataSource = model
-            cell.collectionView.delegate = model
-            print(cell)
-            return cell
-        }
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: model.sectionReuseIdentifier(), for: indexPath) as! TSDiscoverShelfCollectionViewCell
+        
+        model.collectionViewController = self
+        cell.collectionView.dataSource = model
+        cell.collectionView.delegate = model
+
+        print(cell)
+        return cell
     }
 
-    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        if UICollectionElementKindSectionHeader == kind  {
-            if let sectionHeader = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "sectionHeader", forIndexPath: indexPath) as? TSDiscoverSectionHeader {
-                
-                if let string = responseObjectData?["index"][indexPath.section]["title"].string {
-                    sectionHeader.textLabel.text = string
-                }
-                return sectionHeader
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if UICollectionElementKindSectionHeader == kind {
+            let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "sectionHeader", for: indexPath) as! TSDiscoverSectionHeader
+            
+            if let string = responseObjectData?["index"][indexPath.section]["title"].string {
+                sectionHeader.textLabel.text = string
             }
-        }else if let header = collectionView.dequeueReusableSupplementaryViewOfKind(IOStickyHeaderParallaxHeader, withReuseIdentifier: "header", forIndexPath: indexPath) as? TSDiscoverBannerHeader {
+            
+            return sectionHeader
+        } else {
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: IOStickyHeaderParallaxHeader, withReuseIdentifier: "header", for: indexPath) as! TSDiscoverBannerHeader
             header.objects = self.bannerObjects
             return header
         }
-        return UICollectionReusableView()
     }
+    
     
     /*
     // MARK: - Navigation

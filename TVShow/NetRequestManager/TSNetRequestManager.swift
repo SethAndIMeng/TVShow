@@ -11,7 +11,7 @@ import Alamofire
 
 class TSNetRequestManager: NSObject {
     static let sharedInstance = TSNetRequestManager.alamofireManager
-    static let alamofireManager = Manager.sharedInstance;
+    static let alamofireManager = SessionManager.default;
     
     static let defaultHTTPHeaders: [String: String] = {
         
@@ -19,10 +19,10 @@ class TSNetRequestManager: NSObject {
         let acceptEncoding: String = "gzip;q=1.0, compress;q=0.5"
         
         // Accept-Language HTTP Header; see https://tools.ietf.org/html/rfc7231#section-5.3.5
-        let acceptLanguage = NSLocale.preferredLanguages().prefix(6).enumerate().map { index, languageCode in
+        let acceptLanguage = Locale.preferredLanguages.prefix(6).enumerated().map { index, languageCode in
             let quality = 1.0 - (Double(index) * 0.1)
             return "\(languageCode);q=\(quality)"
-            }.joinWithSeparator(", ")
+            }.joined(separator: ", ")
         
         /*
         // User-Agent Header; see https://tools.ietf.org/html/rfc7231#section-5.5.3

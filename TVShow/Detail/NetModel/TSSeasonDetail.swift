@@ -9,7 +9,7 @@ import Foundation
 import SwiftyJSON
 import ObjectMapper
 
-public class TSSeasonDetail: NSObject, Mappable, NSCoding {
+public class TSSeasonDetail: NSObject, Mappable {
 
     // MARK: Declaration for string constants to be used to decode and also serialize.
 	internal let kTSSeasonDetailTitleKey: String = "title"
@@ -164,7 +164,7 @@ public class TSSeasonDetail: NSObject, Mappable, NSCoding {
     Map a JSON object to this class using ObjectMapper
     - parameter map: A mapping from ObjectMapper
     */
-    required public init?(_ map: Map){
+    required public init?(map: Map){
 
     }
 
@@ -197,145 +197,4 @@ public class TSSeasonDetail: NSObject, Mappable, NSCoding {
 		siteList <- map[kTSSeasonDetailSiteListKey]
 
     }
-
-    /**
-    Generates description of the object in the form of a NSDictionary.
-    - returns: A Key value pair containing all valid values in the object.
-    */
-    public func dictionaryRepresentation() -> [String : AnyObject ] {
-
-        var dictionary: [String : AnyObject ] = [ : ]
-		if title != nil {
-			dictionary.updateValue(title!, forKey: kTSSeasonDetailTitleKey)
-		}
-		if episodeBrief?.count > 0 {
-			var temp: [AnyObject] = []
-			for item in episodeBrief! {
-				temp.append(item.dictionaryRepresentation())
-			}
-			dictionary.updateValue(temp, forKey: kTSSeasonDetailEpisodeBriefKey)
-		}
-		if brief != nil {
-			dictionary.updateValue(brief!, forKey: kTSSeasonDetailBriefKey)
-		}
-		if createTimeStr != nil {
-			dictionary.updateValue(createTimeStr!, forKey: kTSSeasonDetailCreateTimeStrKey)
-		}
-		if playStatus != nil {
-			dictionary.updateValue(playStatus!, forKey: kTSSeasonDetailPlayStatusKey)
-		}
-		if total != nil {
-			dictionary.updateValue(total!, forKey: kTSSeasonDetailTotalKey)
-		}
-		if updateinfo != nil {
-			dictionary.updateValue(updateinfo!, forKey: kTSSeasonDetailUpdateinfoKey)
-		}
-		if updateTime != nil {
-			dictionary.updateValue(updateTime!, forKey: kTSSeasonDetailUpdateTimeKey)
-		}
-		if cover != nil {
-			dictionary.updateValue(cover!, forKey: kTSSeasonDetailCoverKey)
-		}
-		if createTime != nil {
-			dictionary.updateValue(createTime!, forKey: kTSSeasonDetailCreateTimeKey)
-		}
-		if viewCount != nil {
-			dictionary.updateValue(viewCount!, forKey: kTSSeasonDetailViewCountKey)
-		}
-		if cat != nil {
-			dictionary.updateValue(cat!, forKey: kTSSeasonDetailCatKey)
-		}
-		if internalIdentifier != nil {
-			dictionary.updateValue(internalIdentifier!, forKey: kTSSeasonDetailInternalIdentifierKey)
-		}
-		if seriesId != nil {
-			dictionary.updateValue(seriesId!, forKey: kTSSeasonDetailSeriesIdKey)
-		}
-		dictionary.updateValue(isFocus, forKey: kTSSeasonDetailIsFocusKey)
-		if score != nil {
-			dictionary.updateValue(score!, forKey: kTSSeasonDetailScoreKey)
-		}
-		if recommend?.count > 0 {
-			var temp: [AnyObject] = []
-			for item in recommend! {
-				temp.append(item.dictionaryRepresentation())
-			}
-			dictionary.updateValue(temp, forKey: kTSSeasonDetailRecommendKey)
-		}
-		if playUrlList?.count > 0 {
-			var temp: [AnyObject] = []
-			for item in playUrlList! {
-				temp.append(item.dictionaryRepresentation())
-			}
-			dictionary.updateValue(temp, forKey: kTSSeasonDetailPlayUrlListKey)
-		}
-		if sid != nil {
-			dictionary.updateValue(sid!, forKey: kTSSeasonDetailSidKey)
-		}
-		if enTitle != nil {
-			dictionary.updateValue(enTitle!, forKey: kTSSeasonDetailEnTitleKey)
-		}
-		if siteList?.count > 0 {
-			var temp: [AnyObject] = []
-			for item in siteList! {
-				temp.append(item.dictionaryRepresentation())
-			}
-			dictionary.updateValue(temp, forKey: kTSSeasonDetailSiteListKey)
-		}
-
-        return dictionary
-    }
-
-    // MARK: NSCoding Protocol
-    required public init(coder aDecoder: NSCoder) {
-		self.title = aDecoder.decodeObjectForKey(kTSSeasonDetailTitleKey) as? String
-		self.episodeBrief = aDecoder.decodeObjectForKey(kTSSeasonDetailEpisodeBriefKey) as? [TSEpisodeBrief]
-		self.brief = aDecoder.decodeObjectForKey(kTSSeasonDetailBriefKey) as? String
-		self.createTimeStr = aDecoder.decodeObjectForKey(kTSSeasonDetailCreateTimeStrKey) as? String
-		self.playStatus = aDecoder.decodeObjectForKey(kTSSeasonDetailPlayStatusKey) as? String
-		self.total = aDecoder.decodeObjectForKey(kTSSeasonDetailTotalKey) as? Int
-		self.updateinfo = aDecoder.decodeObjectForKey(kTSSeasonDetailUpdateinfoKey) as? Int
-		self.updateTime = aDecoder.decodeObjectForKey(kTSSeasonDetailUpdateTimeKey) as? Int
-		self.cover = aDecoder.decodeObjectForKey(kTSSeasonDetailCoverKey) as? String
-		self.createTime = aDecoder.decodeObjectForKey(kTSSeasonDetailCreateTimeKey) as? Int
-		self.viewCount = aDecoder.decodeObjectForKey(kTSSeasonDetailViewCountKey) as? Int
-		self.cat = aDecoder.decodeObjectForKey(kTSSeasonDetailCatKey) as? String
-		self.internalIdentifier = aDecoder.decodeObjectForKey(kTSSeasonDetailInternalIdentifierKey) as? Int
-		self.seriesId = aDecoder.decodeObjectForKey(kTSSeasonDetailSeriesIdKey) as? Int
-		self.isFocus = aDecoder.decodeBoolForKey(kTSSeasonDetailIsFocusKey)
-		self.score = aDecoder.decodeObjectForKey(kTSSeasonDetailScoreKey) as? Float
-		self.recommend = aDecoder.decodeObjectForKey(kTSSeasonDetailRecommendKey) as? [TSRecommend]
-		self.playUrlList = aDecoder.decodeObjectForKey(kTSSeasonDetailPlayUrlListKey) as? [TSPlayUrlList]
-		self.sid = aDecoder.decodeObjectForKey(kTSSeasonDetailSidKey) as? String
-		self.enTitle = aDecoder.decodeObjectForKey(kTSSeasonDetailEnTitleKey) as? String
-		self.siteList = aDecoder.decodeObjectForKey(kTSSeasonDetailSiteListKey) as? [TSSiteList]
-
-    }
-
-    public func encodeWithCoder(aCoder: NSCoder) {
-		aCoder.encodeObject(title, forKey: kTSSeasonDetailTitleKey)
-		aCoder.encodeObject(episodeBrief, forKey: kTSSeasonDetailEpisodeBriefKey)
-		aCoder.encodeObject(brief, forKey: kTSSeasonDetailBriefKey)
-		aCoder.encodeObject(createTimeStr, forKey: kTSSeasonDetailCreateTimeStrKey)
-		aCoder.encodeObject(playStatus, forKey: kTSSeasonDetailPlayStatusKey)
-		aCoder.encodeObject(total, forKey: kTSSeasonDetailTotalKey)
-		aCoder.encodeObject(updateinfo, forKey: kTSSeasonDetailUpdateinfoKey)
-		aCoder.encodeObject(updateTime, forKey: kTSSeasonDetailUpdateTimeKey)
-		aCoder.encodeObject(cover, forKey: kTSSeasonDetailCoverKey)
-		aCoder.encodeObject(createTime, forKey: kTSSeasonDetailCreateTimeKey)
-		aCoder.encodeObject(viewCount, forKey: kTSSeasonDetailViewCountKey)
-		aCoder.encodeObject(cat, forKey: kTSSeasonDetailCatKey)
-		aCoder.encodeObject(actorList, forKey: kTSSeasonDetailActorListKey)
-		aCoder.encodeObject(internalIdentifier, forKey: kTSSeasonDetailInternalIdentifierKey)
-		aCoder.encodeObject(seriesId, forKey: kTSSeasonDetailSeriesIdKey)
-		aCoder.encodeBool(isFocus, forKey: kTSSeasonDetailIsFocusKey)
-		aCoder.encodeObject(score, forKey: kTSSeasonDetailScoreKey)
-		aCoder.encodeObject(recommend, forKey: kTSSeasonDetailRecommendKey)
-		aCoder.encodeObject(playUrlList, forKey: kTSSeasonDetailPlayUrlListKey)
-		aCoder.encodeObject(sid, forKey: kTSSeasonDetailSidKey)
-		aCoder.encodeObject(enTitle, forKey: kTSSeasonDetailEnTitleKey)
-		aCoder.encodeObject(siteList, forKey: kTSSeasonDetailSiteListKey)
-
-    }
-
 }

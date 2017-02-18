@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:TestCollectionViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:TVShow.xcodeproj">
    </FileRef>
    <FileRef
